@@ -2,6 +2,7 @@
 
 window.onload = function(){
 
+ 
 //INTRO VIDEO
 
     var introVideo = document.getElementById('intro-video');
@@ -15,7 +16,6 @@ window.onload = function(){
     }
 
 //PLAY GAME
-	
 
 		var timer = 0;
 		var perc = 0;
@@ -34,78 +34,69 @@ window.onload = function(){
 		    if (perc === 100 ){
 				clearTimeout(timer);
 				displayEndScreen();
-			}
+			   }
 
 		}
+
 //DISPLAY END SCREEN
 
-		var endScreen = document.getElementById("end-screen");
-		function displayEndScreen() {
-			endScreen.setAttribute("class", "visible");
-		}
+	var endScreen = document.getElementById("end-screen");
 
-		$(document).ready(function() {
-		    $('#instructions').click(function() {
-		        clearTimeout(timer);
-		        perc = 0;
-		        animateUpdate();
+	function displayEndScreen() {
+		endScreen.setAttribute("class", "visible");
+	}
 
-		    });
-		});
+	$(document).ready(function() {
+	    $('#instructions').click(function() {
+	        clearTimeout(timer);
+	        perc = 0;
+	        animateUpdate();
 
+	    });
+	});
 
+//NAV BUTTONS
    
-    var navBtnShortz = document.getElementById("shortz");
-
     var navBtnAdrian = document.getElementById("adrian");
-    navBtnShortz.addEventListener("click", gotoAdrianPage, false);
-
     var navBtnHermes = document.getElementById("hermes");
-    navBtnShortz.addEventListener("click", gotoHermesPage, false);
-
-    var navBtnX = document.getElementById("x");
-    navBtnShortz.addEventListener("click", gotoXPage, false);
-
+    var navBtnMax = document.getElementById("max");
     var navBtnShortz = document.getElementById("shortz");
-    navBtnShortz.addEventListener("click", gotoNewPage, false);
-
     var navBtnSully = document.getElementById("sully");
-    navBtnShortz.addEventListener("click", gotoSullyPage, false);
-
-
-    function gotoNewPage(e) {
-		var adrianPage = document.getElementById("adrian-page");
-    	var shortzPage = document.getElementById("hermes-page");
-    	var xPage = document.getElementById("x-page");
-    	var shortzPage = document.getElementById("shortz-page");
-    	var sullyPage = document.getElementById("sully-page");
-		
-		var currentPage = document.getElementsByClassName("visible-page");		
-		currentPage.setAttribute("class", "invisible-page");
-		
-		if(e.target === navBtnAdrian){
-			adrianPage.setAttribute("class", "visible-page"); 
-      	} else if (e.target === navBtnHermes){
-      		hermesPage.setAttribute("class", "visible-page"); 
-      		}	else if (e.target === navBtnHermes){
-      				xPage.setAttribute("class", "visible-page"); 
-      			}	else if (e.target === navBtnHermes){
-      					shortzPage.setAttribute("class", "visible-page"); 
-      				}	else if (e.target === navBtnHermes){
-      						sullyPage.setAttribute("class", "visible-page"); 
-      					}
-    }
-
-
 
     var homeNavItem = document.getElementsByClassName("home-grouping");
+
+    var homePage = document.getElementById("home-page");
+    var adrianPage = document.getElementById("adrian-page");
+    var shortzPage = document.getElementById("hermes-page");
+    var maxPage = document.getElementById("max-page");
+    var shortzPage = document.getElementById("shortz-page");
+    var sullyPage = document.getElementById("sully-page");
+
+  function gotoNewPage(e) {
+		  
+		var currentPage = document.getElementsByClassName("visible-page");
+    		
+		currentPage.setAttribute("class", "invisible-page");
+
+    		if (e.target == navBtnAdrian){
+    			adrianPage.setAttribute("class", "visible-page"); 
+          	} else if (e.target == navBtnHermes){
+          		hermesPage.setAttribute("class", "visible-page"); 
+          		}	else (e.target == navBtnMax){
+          				maxPage.setAttribute("class", "visible-page"); 
+          			}	else (e.target == navBtnHermes){
+          					shortzPage.setAttribute("class", "visible-page"); 
+          				}	else (e.target == navBtnHermes){
+          						sullyPage.setAttribute("class", "visible-page"); 
+          					}
+        
+  }
 
     for (var i = 0; i < homeNavItem.length; i++) {
 	homeNavItem[i].addEventListener("click", gotoNewPage, false);
 	}
 	
 
-    
 
   //END GAME
 
@@ -128,7 +119,7 @@ window.onload = function(){
    var correctGuessScreen = document.getElementById("correct-guess");
    var wrongGuessScreen = document.getElementById("wrong-guess");
 
-   function wrongGuess() {
+  function wrongGuess() {
    		guessScreen.setAttribute("class", "invisible");
         wrongGuessScreen.setAttribute("class", "visible");
 	}
@@ -138,6 +129,11 @@ window.onload = function(){
         correctGuessScreen.setAttribute("class", "visible");
 	}
   
-
+  function playAgain (){
+     wrongGuessScreen.setAttribute("class", "invisible");
+     correctGuessScreen.setAttribute("class", "invisible");
+     currentPage.setAttribute("class", "invisible-page");
+     homePage.setAttribute("class", "visible-page");
+  }
 
 }();

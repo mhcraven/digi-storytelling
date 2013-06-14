@@ -1,3 +1,4 @@
+/*ALL PAGES*/
 
 html {
 	min-width: 60%;
@@ -10,84 +11,27 @@ body {
 	background-color: #0249fc;
 }
 
+	#page-wrap {
+		z-index: -1; 
+	    position: fixed; 
+	    font-family: 'Titillium Web', sans-serif;
+	    font-size: 20pt; 
+	    color: lightblue; 
+	    margin: 10px;
+	}
+
 h3 {
 	color: lightblue;
 	font-family: 'Titillium Web', sans-serif;
-	font-size: 4em;
-}
-#backgound-container {
-	position: relative;
+	font-size: 2em;
 }
 
-#background {
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	z-index: -1;
-	font-family: 'Titillium Web', sans-serif;
-	overflow: hidden;
-	font-size: 1em;
-	color: #6666FF;
-	letter-spacing: 1px;
-}
-
-#intro-video {
-	position: absolute;
-	top: 0px;
-	left: 170px;
-	z-index: 1001;
-}
-
-#home-main {
-	
-}
-	#instructions {
-		position: absolute;
-		top: 350px;
-		left: 485px;
-		z-index: 10;
-	}
-
-#home-logo {
-	float: left;
-	margin: 20px 190px 40px 190px;
-}
-
-.home-grouping {
-	width: 135px;
-}
-
-#home-nav-folders {
-	width: 90%;
-	margin: 60px 90px auto;
-}
-
-	.home-grouping {
-	opacity:0.6;
-	filter:alpha(opacity=40); /* For IE8 and earlier */
-	}
-
-	.home-grouping:hover{
-	opacity:1;
-	filter:alpha(opacity=40); /* For IE8 and earlier */
-	}
-
-
-.home-grouping img:first-child {
-	   border: solid 4px #FFF;
-}
-
-header {
-	width: 100%;
-	min-width: 90%;
-}
-
-#logo {
-	float: left;
-	width: 25%;
-	margin: 2%;
+figcaption {
+		font-family: 'Average Sans', sans-serif;
+		color: white;
+		text-shadow: 1px 1px 1px #111;
+		margin-top: -1px;
+		letter-spacing: 1px;
 }
 
 #pbar_outerdiv {
@@ -105,8 +49,10 @@ header {
 	 background-color: black; 
 	 z-index: 2; 
 	 height: 100%; 
+	 font-size: 1em;
 	 width: 0%;
 	 margin: 0px;
+	 padding: 1px;
 }
 
 #pbar_innertext {
@@ -120,51 +66,27 @@ header {
 	 text-align: center;
 }
 
-#nav-folders {
-	float: right;
-	width: 50%;
-	min-width: 25%;
-	margin-right: 8%;
-} 
-
-	ul li {
-		float: left;
-		margin-left: 5%;
-	}
-	
-	figcaption {
-		font-family: 'Average Sans', sans-serif;
-		color: white;
-		text-shadow: 1px 1px 1px #111;
-		margin-top: -1px;
-		letter-spacing: 1px;
-	}
-
-#main {
-	clear: both;
-	padding: 1% 0 0 1%;
+p {
+	font-size: 1em;
 }
-	#bio {
-		float: left;
-		margin: 1%;
-	}
 
-	#video-clue {
-		float: left;
-		margin: 1%;
-	}
+li {
+	list-style-type: none;
+	text-align: center;
+	font-size: 1em;
+	padding-bottom: 9px;
+	margin-left: 0;
+	padding-left: none;
+	color: black;
+}
 
-	audio {
-		clear: both;
-		margin: 1%;
-	}
+map title {
+	color: white;
+}
 
-	#files {
-		float: left;
-		margin: 1%;
-	}
-
-
+a {
+	text-decoration: none;
+}
 
 .invisible {
     display: none;
@@ -191,30 +113,6 @@ header {
 
 .visible-page {
 	display: block;
-
-}
-
-p {
-	font-size: 1em;
-}
-
-li {
-	list-style-type: none;
-	text-align: center;
-	font-size: 1em;
-	padding-bottom: 9px;
-	margin-left: 0;
-	padding-left: none;
-	color: black;
-}
-
-map title {
-	color: white;
-
-}
-
-a {
-	text-decoration: none;
 }
 
 #end-screen {
@@ -252,5 +150,105 @@ a {
 	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
 	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
 	border-bottom: 1px solid rgba(0,0,0,0.25);
-
 }
+
+/* HOME PAGE*/
+
+#intro-video {
+	position: absolute;
+	top: 100px;
+	left: 150px;
+	clear: both;
+	z-index: 1001;
+}
+
+#home-main {
+	clear: both;
+	position: relative;
+	
+}
+	#instructions {
+		position: absolute;
+		top: 350px;
+		left: 485px;
+		z-index: 10;
+	}
+
+#home-logo {
+	float: left;
+	margin: 20px 190px 40px 190px;
+}
+
+#home-nav {
+	width: 90%;
+	margin: 60px 90px auto;
+}
+
+	.home-grouping {
+		position: relative;
+		width: 135px;
+		opacity:0.6;
+		filter:alpha(opacity=40); /* For IE8 and earlier */
+	}
+
+	.home-grouping:hover{
+		opacity:1;
+		filter:alpha(opacity=40); /* For IE8 and earlier */
+	}
+
+	.home-grouping img:first-child {
+		  border: solid 4px #FFF;
+	}
+
+
+/*CHARACTER PAGES*/
+
+header {
+	width: 100%;
+	min-width: 90%;
+}
+
+#logo {
+	float: left;
+	width: 25%;
+	margin: 2%;
+}
+
+#nav-folders {
+	float: right;
+	width: 50%;
+	min-width: 25%;
+	margin-right: 8%;
+} 
+
+	ul li {
+		float: left;
+		margin-left: 5%;
+	}
+	
+div #main {
+	clear: both;
+	padding: 1% 0 0 1%;
+}
+	#bio {
+		float: left;
+		margin: 1%;
+	}
+
+	#video-clue {
+		float: left;
+		margin: 1%;
+	}
+
+	audio {
+		clear: both;
+		margin: 1%;
+	}
+
+	#files {
+		float: left;
+		margin: 1%;
+	}
+
+
+
