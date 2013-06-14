@@ -5,10 +5,11 @@ html {
 	max-width: 100%;
 	min-height: 200px;
 	max-height: 400px;
+	background-color: #0249fc;
 }
 
 body { 
-	background-color: #0249fc;
+
 }
 
 	#page-wrap {
@@ -64,6 +65,7 @@ figcaption {
 	 color: white; 
 	 font-family: arial; 
 	 text-align: center;
+	 font-size: .5em;
 }
 
 p {

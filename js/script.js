@@ -3,16 +3,17 @@
 window.onload = function(){
 
  
-//INTRO VIDEO
+//REMOVE INTRO VIDEO
 
     var introVideo = document.getElementById('intro-video');
-    introVideo.addEventListener('ended',removeVideo,false);
+    introVideo.addEventListener('ended', removeVideo, false);
 
     function removeVideo(e) {
-        if(!e) { e = window.event; 
-     }
+      alert("go away video!");
+        if(!e) { 
+          e = window.event; 
+        }
         introVideo.setAttribute("class", "invisible");
-        
     }
 
 //PLAY GAME
@@ -66,13 +67,14 @@ window.onload = function(){
     var homeNavItem = document.getElementsByClassName("home-grouping");
 
     var homePage = document.getElementById("home-page");
+
     var adrianPage = document.getElementById("adrian-page");
     var shortzPage = document.getElementById("hermes-page");
     var maxPage = document.getElementById("max-page");
     var shortzPage = document.getElementById("shortz-page");
     var sullyPage = document.getElementById("sully-page");
 
-  function gotoNewPage(e) {
+  /*function gotoNewPage(e) {
 		  
 		var currentPage = document.getElementsByClassName("visible-page");
     		
@@ -95,7 +97,7 @@ window.onload = function(){
     for (var i = 0; i < homeNavItem.length; i++) {
 	homeNavItem[i].addEventListener("click", gotoNewPage, false);
 	}
-	
+	*/
 
 
   //END GAME
@@ -103,10 +105,13 @@ window.onload = function(){
    var endBtnAdrian = document.getElementById("adrian-button");
    endBtnAdrian.addEventListener('click', wrongGuess, false);
 
+   var playAgainBtn = document.getElementById("play-again");
+   playAgainBtn.addEventListener('click', playAgain, false);
+
    var hermesBtn = document.getElementById("hermes-button");
    hermesBtn.addEventListener('click', wrongGuess, false);
 
-   var endBtnX = document.getElementById("x-button");
+   var endBtnX = document.getElementById("max-button");
    endBtnX.addEventListener('click', correctGuess, false);
 
    var endBtnShortz = document.getElementById("shortz-button");
@@ -118,6 +123,7 @@ window.onload = function(){
    var guessScreen = document.getElementById("guess-screen");
    var correctGuessScreen = document.getElementById("correct-guess");
    var wrongGuessScreen = document.getElementById("wrong-guess");
+
 
   function wrongGuess() {
    		guessScreen.setAttribute("class", "invisible");
@@ -132,8 +138,16 @@ window.onload = function(){
   function playAgain (){
      wrongGuessScreen.setAttribute("class", "invisible");
      correctGuessScreen.setAttribute("class", "invisible");
+     endScreen.setAttribute("class", "invisible");
      currentPage.setAttribute("class", "invisible-page");
+     
      homePage.setAttribute("class", "visible-page");
+      
+  }
+
+  function gotoHomepage(){
+      introVideo.removeAttribute("class", "invisible");   
+
   }
 
 }();
