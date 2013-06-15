@@ -2,19 +2,38 @@
 
 window.onload = function(){
 
- 
+//AUDIO
+
+function playBkgrdMusic() {
+  var introMusic = document.getElementById("intro-music");
+
+  introMusic.loop = true;
+  introMusic.play();
+}
+
+
+
 //REMOVE INTRO VIDEO
+
+var pBar = document.getElementById("pbar_outerdiv");
+var homeNav = document.getElementById("home-nav");
+
+    (function () {
 
     var introVideo = document.getElementById('intro-video');
     introVideo.addEventListener('ended', removeVideo, false);
 
     function removeVideo(e) {
-      alert("go away video!");
         if(!e) { 
           e = window.event; 
         }
         introVideo.setAttribute("class", "invisible");
+        pBar.setAttribute("class", "visible");
+        homeNav.setAttribute("class", "visible");
+        playBkgrdMusic();
     }
+
+    })();
 
 //PLAY GAME
 
@@ -30,7 +49,7 @@ window.onload = function(){
 		    perc++;
 		    updateProgress(perc);
 		    if(perc < 100) {
-		        timer = setTimeout(animateUpdate, 20);
+		        timer = setTimeout(animateUpdate, 1000);
 		    }
 		    if (perc === 100 ){
 				clearTimeout(timer);
@@ -57,55 +76,90 @@ window.onload = function(){
 	});
 
 //NAV BUTTONS
-   
-    var navBtnAdrian = document.getElementById("adrian");
-    var navBtnHermes = document.getElementById("hermes");
-    var navBtnMax = document.getElementById("max");
-    var navBtnShortz = document.getElementById("shortz");
-    var navBtnSully = document.getElementById("sully");
-
-    var homeNavItem = document.getElementsByClassName("home-grouping");
-
-    var homePage = document.getElementById("home-page");
+    var currentPage = document.getElementsByClassName("visible-page")[0]; 
 
     var adrianPage = document.getElementById("adrian-page");
-    var shortzPage = document.getElementById("hermes-page");
+    var hermesPage = document.getElementById("hermes-page");
     var maxPage = document.getElementById("max-page");
     var shortzPage = document.getElementById("shortz-page");
     var sullyPage = document.getElementById("sully-page");
+    var homePage = document.getElementById("home-page");
 
-  /*function gotoNewPage(e) {
-		  
-		var currentPage = document.getElementsByClassName("visible-page");
-    		
-		currentPage.setAttribute("class", "invisible-page");
+    var intHeader = document.getElementsByTagName("header")[0];
 
-    		if (e.target == navBtnAdrian){
-    			adrianPage.setAttribute("class", "visible-page"); 
-          	} else if (e.target == navBtnHermes){
-          		hermesPage.setAttribute("class", "visible-page"); 
-          		}	else (e.target == navBtnMax){
-          				maxPage.setAttribute("class", "visible-page"); 
-          			}	else (e.target == navBtnHermes){
-          					shortzPage.setAttribute("class", "visible-page"); 
-          				}	else (e.target == navBtnHermes){
-          						sullyPage.setAttribute("class", "visible-page"); 
-          					}
-        
-  }
+    var navBtnAdrian = document.getElementById("adrian");
+    navBtnAdrian.addEventListener("click", gotoPageAdrian, false);
 
-    for (var i = 0; i < homeNavItem.length; i++) {
-	homeNavItem[i].addEventListener("click", gotoNewPage, false);
-	}
-	*/
+    var navBtnadrian = document.getElementById("adrian2");
+    navBtnadrian.addEventListener("click", gotoPageAdrian, false);
 
+  
+
+    function gotoPageAdrian() {
+      alert ("go to Adrian page from" + currentPage);
+      intHeader.setAttribute("class","visible");
+      currentPage.setAttribute("class", "invisible-page");
+      adrianPage.setAttribute("class", "visible-page"); 
+    }
+
+    var navBtnHermes = document.getElementById("hermes");
+    navBtnHermes.addEventListener("click", gotoPageHermes, false);
+
+    var navBtnhermes = document.getElementById("hermes2");
+    navBtnhermes.addEventListener("click", gotoPageHermes, false);
+
+    function gotoPageHermes() {
+      alert ("go to Hermes from" + currentPage);
+      intHeader.setAttribute("class","visible");
+      currentPage.setAttribute("class", "invisible-page");
+      hermesPage.setAttribute("class", "visible-page"); 
+    }
+
+    var navBtnMax = document.getElementById("max");
+    navBtnMax.addEventListener("click", gotoPageMax, false);
+
+    var navBtnmax = document.getElementById("max2");
+    navBtnmax.addEventListener("click", gotoPageMax, false);
+
+    function gotoPageMax() {
+      alert ("go to Max from" + currentPage);
+      intHeader.setAttribute("class","visible");
+      currentPage.setAttribute("class", "invisible-page");
+      maxPage.setAttribute("class", "visible-page"); 
+    }
+
+    var navBtnShortz = document.getElementById("shortz");
+    navBtnShortz.addEventListener("click", gotoPageShortz, false);
+
+    var navBtnshortz = document.getElementById("shortz2");
+    navBtnshortz.addEventListener("click", gotoPageShortz, false);
+
+    function gotoPageShortz() {
+      alert ("go to Shortz from"+ currentPage);
+      intHeader.setAttribute("class","visible");
+      currentPage.setAttribute("class", "invisible-page");
+      shortzPage.setAttribute("class", "visible-page"); 
+    }
+
+    var navBtnSully = document.getElementById("sully");
+    navBtnSully.addEventListener("click", gotoPageSully, false);
+
+    var navBtnsully = document.getElementById("sully2");
+    navBtnsully.addEventListener("click", gotoPageSully, false);
+
+    function gotoPageSully() {
+      alert ("go to Sully from" + currentPage);
+      intHeader.setAttribute("class","visible");
+      currentPage.setAttribute("class", "invisible-page");
+      sullyPage.setAttribute("class", "visible-page"); 
+    }
 
   //END GAME
 
    var endBtnAdrian = document.getElementById("adrian-button");
    endBtnAdrian.addEventListener('click', wrongGuess, false);
 
-   var playAgainBtn = document.getElementById("play-again");
+   var playAgainBtn = document.getElementById("play-again-btn");
    playAgainBtn.addEventListener('click', playAgain, false);
 
    var hermesBtn = document.getElementById("hermes-button");
@@ -126,13 +180,13 @@ window.onload = function(){
 
 
   function wrongGuess() {
-   		guessScreen.setAttribute("class", "invisible");
-        wrongGuessScreen.setAttribute("class", "visible");
+   	guessScreen.setAttribute("class", "invisible");
+    wrongGuessScreen.setAttribute("class", "visible");
 	}
 
 	function correctGuess() {
 		guessScreen.setAttribute("class", "invisible");
-        correctGuessScreen.setAttribute("class", "visible");
+    correctGuessScreen.setAttribute("class", "visible");
 	}
   
   function playAgain (){
@@ -140,8 +194,9 @@ window.onload = function(){
      correctGuessScreen.setAttribute("class", "invisible");
      endScreen.setAttribute("class", "invisible");
      currentPage.setAttribute("class", "invisible-page");
-     
+     document.getElementById("pbar_outerdiv").setAttribute("class","invisible");
      homePage.setAttribute("class", "visible-page");
+     intHeader.setAttribute("class","invisible");
       
   }
 

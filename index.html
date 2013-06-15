@@ -5,20 +5,29 @@
 	<title>The Usual Hackspects</title>
 
 	<meta charset="utf-8">
+	
+	<link rel="stylesheet" href="css/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Average+Sans' rel='stylesheet' type='text/css'/>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+	<link href="css/lightbox.css" rel="stylesheet" />
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-	<link rel="stylesheet" href="css/style.css">
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>	
 	<script src="js/lightbox.js"></script>
-	 <script src="js/script.js"></script>
-	 <link href="css/lightbox.css" rel="stylesheet" />
+	<script src="js/script.js"></script>
+	<script src="js/modernizr.js"></script>	
+
 </head>
 
 <body>
 	<div id="page-wrap">
 
-		 <div id="end-screen" class="invisible">
+		<audio id="intro-music">
+		   	<source src="audio/backgroundmusic.mp3" type="audio/mp3" codecs="mp3">
+		   <!-- add your fallback solution here -->
+		</audio>
+
+		<div id="end-screen" class="invisible">
 				<div id="guess-screen">
 					<h3>Who hacked you?</h3>
 					<input id="adrian-button" class="end-buttons" type="button" value="Adrian?">
@@ -29,164 +38,90 @@
 				</div>
 				<div id="correct-guess" class="invisible">
 					<img src="images/photo-max.jpg">
-					<p>Congratulations, you guess correctly! It was Mr. Max who stole your files and killed Adrian</p>
-					<input id="play-again" type="button" value="PLAY AGAIN">
+					<p>Congratulations, you guess correctly! It was Max who stole your files and killed Adrian</p>
 				</div>
 				<div id="wrong-guess" class="invisible">
 					<p>Sorry, you guessed wrong! Your files have been lost forever and the hackers get away with their crimes once again.</p>
-					<input id="play-again" type="button" value="PLAY AGAIN">
 				</div>
+				<input id="play-again-btn" type="button" value="PLAY AGAIN">
 		</div>
 
-		<div id="pbar_outerdiv" class="visible" >
+		<div id="pbar_outerdiv" class="invisible" >
 					<div id="pbar_innerdiv"></div>
 					<div id="pbar_innertext">Preparing to Download...</div>
 		</div>
 
 		<section id="home-page" class="visible-page">
 				
-				<video width="960" height="720" id="intro-video" class="" controls="">
-		  			<source src="video/intro.mp4" type="video/mp4">
-					Your browser does not support the video tag.
-				</video> 
+			<video width="800" height="" id="intro-video" class="" controls="">
+	  			<source src="video/intro.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+			</video> 
 
-				<img id="instructions" nohref class="visible" onClick="javascript:hideAlert()" src="images/error.jpg">
+			<img id="instructions" nohref class="visible" onClick="javascript:hideAlert()" src="images/error.jpg">
 
-				<script>
-				function hideAlert(){
-					var instruc = document.getElementById("instructions");
-					instruc.setAttribute("class", "invisible");
-				}
-				</script>
+			<script>
+			function hideAlert(){
+				var instruc = document.getElementById("instructions");
+				instruc.setAttribute("class", "invisible");
+			}
+			</script>
 
-				<h1 id="home-logo"><img src="images/home-logo.png"></h1>
-
-			<section id="home-main">			
-				<nav id="home-nav">
-					<ul class="nav-list">
-						<li class="home-grouping" id="adrian">
-								<img src="images/photo-adrian.jpg">
-								<img src="images/home-folder-icon.png">
-								<figcaption> Adrian </figcaption>
-						</li>	
-						<li class="home-grouping" id="hermes">
-								<img src="images/photo-hermes.jpg">
-								<img src="images/home-folder-icon.png">
-								<figcaption> Hermes </figcaption>
-						<li class="home-grouping" id="max">
-								<img src="images/photo-max.jpg">
-								<img src="images/home-folder-icon.png">
-								<figcaption> Max </figcaption>
-						</li>
-						<li class="home-grouping" id="shortz">
-								<img src="images/photo-shortz.jpg">
-								<img src="images/home-folder-icon.png">
-								<figcaption> Shortz86 </figcaption>
-						</li>
-						<li class="home-grouping" id="sully">
-								<img src="images/photo-sully.jpg">
-								<img src="images/home-folder-icon.png">
-								<figcaption> Sully </figcaption>
-						</li>
-					</ul>
-				</nav>		
-			</section>
-				
-		</section>
-		
-		<section id="adrian-page" class="invisible-page">
-		 	<header>
-				<h1 id="logo"><a href="index.html"><img src="images/logo.png"></a></h1>
-
-				<nav id="nav-folders">
-					<ul>
-						<li id="adrian"><img idsrc="images/folder-icon-on.png">
-							<figcaption> Adrian </figcaption></li>
-						<li id="hermes"><img src="images/folder-icon-off.png">
-							<figcaption> Hermes </figcaption></li>
-						<li id="max"><img src="images/folder-icon-off.png">
-							<figcaption> Max </figcaption></li>
-						<li id="shortz"><img src="images/folder-icon-off.png">
-							<figcaption> Shortz86 </figcaption></li>
-						<li id="sully"><img src="images/folder-icon-off.png">
-							<figcaption> Sully </figcaption></li>
-					</ul>
-				</nav>
-			</header>
-
-		 </section>
-
-		 <section id="hermes-page" class="invisible-page">
-		 	<header>
-				<h1 id="logo"><a href="index.html"><img src="images/logo.png"></a></h1>
-
-				<nav id="nav-folders">
-					<ul>
-						<li id="adrian"><img idsrc="images/folder-icon-off.png">
-							<figcaption> Adrian </figcaption></li>
-						<li id="hermes"><img src="images/folder-icon-on.png">
-							<figcaption> Hermes </figcaption></li>
-						<li id="max"><img src="images/folder-icon-off.png">
-							<figcaption> Max </figcaption></li>
-						<li id="shortz"><img src="images/folder-icon-off.png">
-							<figcaption> Shortz86 </figcaption></li>
-						<li id="sully"><img src="images/folder-icon-off.png">
-							<figcaption> Sully </figcaption></li>
-					</ul>
-				</nav>
-			</header>
-
-		 </section>
-
-		 <section id="max-page" class="invisible-page">
-		 	<header>
-				<h1 id="logo"><a href="index.html"><img src="images/logo.png"></a></h1>
-
-				<nav id="nav-folders">
-					<ul>
-						<li id="adrian"><img idsrc="images/folder-icon-off.png">
-							<figcaption> Adrian </figcaption></li>
-						<li id="hermes"><img src="images/folder-icon-off.png">
-							<figcaption> Hermes </figcaption></li>
-						<li id="max"><img src="images/folder-icon-on.png">
-							<figcaption> Max </figcaption></li>
-						<li id="shortz"><img src="images/folder-icon-off.png">
-							<figcaption> Shortz86 </figcaption></li>
-						<li id="sully"><img src="images/folder-icon-off.png">
-							<figcaption> Sully </figcaption></li>
-					</ul>
-				</nav>
-			</header>
-
-		 </section>
-
-		<section id="shortz-page" class="invisible-page">
+			<h1 id="home-logo"><img src="images/home-logo.png"></h1>
 			
-			<header>
-				<h1 id="logo"><a href="index.html"><img src="images/logo.png"></a></h1>
+			<nav id="home-nav" class="invisible">
+				<ul class="nav-list">
+					<li class="home-grouping" id="adrian">
+							<img src="images/photo-adrian.jpg">
+							<img src="images/home-folder-icon.png">
+							<figcaption> Adrian </figcaption>
+					</li>	
+					<li class="home-grouping" id="hermes">
+							<img src="images/photo-hermes.jpg">
+							<img src="images/home-folder-icon.png">
+							<figcaption> Hermes </figcaption>
 
-				<nav id="nav-folders">
-					<ul>
-						<li id="adrian"><img idsrc="images/folder-icon-off.png">
-							<figcaption> Adrian </figcaption></li>
-						<li id="hermes"><img src="images/folder-icon-off.png">
-							<figcaption> Hermes </figcaption></li>
-						<li id="max"><img src="images/folder-icon-off.png">
-							<figcaption> Max </figcaption></li>
-						<li id="shortz"><img src="images/folder-icon-on.png">
-							<figcaption> Shortz86 </figcaption></li>
-						<li id="sully"><img src="images/folder-icon-off.png">
-							<figcaption> Sully </figcaption></li>
-					</ul>
-				</nav>
-			</header>
+					<li class="home-grouping" id="max">
+							<img src="images/photo-max.jpg">
+							<img src="images/home-folder-icon.png">
+							<figcaption> Max </figcaption>
+					</li>
+					<li class="home-grouping" id="shortz">
+							<img src="images/photo-shortz.jpg">
+							<img src="images/home-folder-icon.png">
+							<figcaption> Shortz86 </figcaption>
+					</li>
+					<li class="home-grouping" id="sully">
+							<img src="images/photo-sully.jpg">
+							<img src="images/home-folder-icon.png">
+							<figcaption> Sully </figcaption>
+					</li>
+				</ul>
+			</nav>		
+		</section>
+					
+		<header class="invisible">
+			<h2 id="logo"><img src="images/logo.png"></h2>
+			<nav id="nav-folders">
+				<ul>
+					<li id="adrian2"><img src="images/folder-icon-off.png">
+						<figcaption> Adrian </figcaption></li>
+					<li id="hermes2"><img src="images/folder-icon-off.png">
+						<figcaption> Hermes </figcaption></li>
+					<li id="max2"><img src="images/folder-icon-off.png">
+						<figcaption> Max </figcaption></li>
+					<li id="shortz2"><img src="images/folder-icon-off.png">
+						<figcaption> Shortz86 </figcaption></li>
+					<li id="sully2"><img src="images/folder-icon-off.png">
+						<figcaption> Sully </figcaption></li>
+				</ul>
+			</nav>
+		</header>
+		<section id="characters">
+			<section id="adrian-page" class="invisible-page">
+				<img class="files" class="ui-widget-content" src="images/files-shortz.jpg" alt="" usemap="#afiles" >
 
-
-			<div id="main">
-
-				<img id="files" class="ui-widget-content" src="images/files-shortz.jpg" alt="" usemap="#files" >
-
-					<map name="files">
+					<map name="afiles">
 						<area shape="rect" coords="43,70,140,128" rel="lightbox" href="images/email-shortz.jpg" title="Email" alt="Email to Hermes" />
 						
 						<area shape="rect" coords="210,50,336,128" rel="lightbox" href="images/im-shortz.jpg" title="Email" alt="IM from Shortz to Hermes" />
@@ -194,50 +129,100 @@
 						<area shape="rect" coords="30,250,150,315" rel="lightbox" href="images/email-shortz2.jpg" title="Email" alt="Email from Hermes" />
 					</map>
 
-				<img id="bio" src="images/bio-shortz.png" alt="bio" usemap="#clue1" >
+				<img class="bio" src="images/bio-shortz.png" alt="bio" usemap="#clue1" >
 					
 					<map name="clue1">
 						<area shape="rect" coords="194,375,472,402" href="hermes.html" title="Bio" alt="Herme's Bio" />
 			
-				<video width="320" id="video-clue" height="240" controls="">
+				
+			</section>
+
+			<section id="hermes-page" class="invisible-page">
+				<img class="files" class="ui-widget-content" src="images/files-shortz.jpg" alt="" usemap="#hfiles" >
+	
+					<map name="hfiles">
+						<area shape="rect" coords="43,70,140,128" rel="lightbox" href="images/email-shortz.jpg" title="Email" alt="Email to Hermes" />
+						
+						<area shape="rect" coords="210,50,336,128" rel="lightbox" href="images/im-shortz.jpg" title="Email" alt="IM from Shortz to Hermes" />
+
+						<area shape="rect" coords="30,250,150,315" rel="lightbox" href="images/email-shortz2.jpg" title="Email" alt="Email from Hermes" />
+					</map>
+
+				<img class="bio" src="images/bio-hermes.png" alt="bio" usemap="#hclue1" >
+					
+					
+			
+				
+			</section>
+
+			<section id="max-page" class="invisible-page">
+				<img class="files" class="ui-widget-content" src="images/files-shortz.jpg" alt="" usemap="#hfiles" >
+	
+					<map name="hfiles">
+						<area shape="rect" coords="43,70,140,128" rel="lightbox" href="images/email-shortz.jpg" title="Email" alt="Email to Hermes" />
+						
+						<area shape="rect" coords="210,50,336,128" rel="lightbox" href="images/im-shortz.jpg" title="Email" alt="IM from Shortz to Hermes" />
+
+						<area shape="rect" coords="30,250,150,315" rel="lightbox" href="images/email-shortz2.jpg" title="Email" alt="Email from Hermes" />
+					</map>
+
+				<img class="bio" src="images/bio-max.png" alt="bio" usemap="#mclue1">
+					
+					
+			</section>
+
+			<section id="shortz-page" class="invisible-page">
+				<img class="files" class="ui-widget-content" src="images/files-shortz.jpg" alt="" usemap="#shfiles" >
+
+					<map name="shfiles">
+						<area shape="rect" coords="43,70,140,128" rel="lightbox" href="images/email-shortz.jpg" title="Email" alt="Email to Hermes" />
+						
+						<area shape="rect" coords="210,50,336,128" rel="lightbox" href="images/im-shortz.jpg" title="Email" alt="IM from Shortz to Hermes" />
+
+						<area shape="rect" coords="30,250,150,315" rel="lightbox" href="images/email-shortz2.jpg" title="Email" alt="Email from Hermes" />
+					</map>
+
+				<img class="bio" src="images/bio-shortz.png" alt="bio" usemap="#shclue1" />
+					
+					<map name="shclue1">
+						<area shape="rect" coords="194,375,472,402" href="hermes.html" title="Bio" alt="Herme's Bio" />
+			
+				<video width="320" class="video-clue" height="240" controls="">
 		  			
 		  			<source src="video/intro.mp4" type="video/mp4">
 		  			
 					Your browser does not support the video tag.
 				</video> 
-				<audio controls>
-		 			 <source src="audio/audio-shortz.wav" title="Telephone Recording" type="audio/wav">
+				<audio controls preload="auto" autobuffer>
+		 			 <source src="audio/phoneconv-shortz.mp3" title="Telephone Recording" type="audio/mp3">
 					Your browser does not support the audio element.
 				</audio>
-
 			</div>
 		 </section>
 
-		  <section id="sully-page" class="invisible-page">
-		 	<header>
-				<h1 id="logo"><a href="index.html"><img src="images/logo.png"></a></h1>
+		 <section id="sully-page" class="invisible-page">
 
-				<nav id="nav-folders">
-					<ul>
-						<li id="adrian"><img idsrc="images/folder-icon-off.png">
-							<figcaption> Adrian </figcaption></li>
-						<li id="hermes"><img src="images/folder-icon-off.png">
-							<figcaption> Hermes </figcaption></li>
-						<li id="max"><img src="images/folder-icon-off.png">
-							<figcaption> Max </figcaption></li>
-						<li id="shortz"><img src="images/folder-icon-off.png">
-							<figcaption> Shortz86 </figcaption></li>
-						<li id="sully"><img src="images/folder-icon-on.png">
-							<figcaption> Sully </figcaption></li>
-					</ul>
-				</nav>
-			</header>
+		 	<img class="files" class="ui-widget-content" src="images/files-shortz.jpg" alt="" usemap="#sufiles" >
 
-		 </section>
+					<map name="sufiles">
+						<area shape="rect" coords="43,70,140,128" rel="lightbox" href="images/email-shortz.jpg" title="Email" alt="Email to Hermes" />
+						
+						<area shape="rect" coords="210,50,336,128" rel="lightbox" href="images/im-shortz.jpg" title="Email" alt="IM from Shortz to Hermes" />
 
+						<area shape="rect" coords="30,250,150,315" rel="lightbox" href="images/email-shortz2.jpg" title="Email" alt="Email from Hermes" />
+					</map>
 
+				<img class="bio" src="images/bio-sully.png" alt="bio" usemap="#shclue1" />
+					
+					
+				
+		</section>
+		</section>
 
-		 
+		<div id="background">
+			11001020030010230401201001020101001110010101010101010102020201020300550938402938010<br>1100200102938578931131230910010010100010011000000000000000000102030000000000011111111111110010200300102304012010010201010011100101010101010101020202010203005509384029380101100200102938578931131230910010010100010<br>0110000000000000000001020300000000000111111111111100102003001023040120100102010100111001010101010101010202020102030055093840293801011002001029385789311312309100100101000100<br>11000000000000000000102030000000000011111111111110010200300102304012010010201010011100101010101010101020202010203005509384029380101100200102938578931131230<br>91001001010001001100000000000000000010203000000000001111111111111001020030010230401201<br>
+			1100101010101010101020202010203005509384029380101100200102938578931131230910010010100010011000000000000000000102030000000000011111111111110010200300102304012010010201010011100101010101010101020202010203005509384029380101100200102938578931131230910010<br>0101000100110000000000000000001020300000000000111111111111100102003001023040120100102010100111001010101010000011<br>1111111111100102003001023040<br>120100102010100111001010101010101010202020102030055093840293801011002001029385789311312309100100101000100<br>1100000000000000000010203000000<br>000001111111111111001020030010230401201001020101001110010101010101010102020201020300550938402938010110020010293857893113123<br>0910010010100010011000000000000000000102030000000000011111111<br>11111001<br>1100101010101010101020202010203005509384029380101100200102938578931131230910010010100010011000000000000000000102030000000000011111111111110010200300102304012010010201010011100101010101010101020202010203005509384029380101100200102938578931131230910010<br>0101000100110000000000000001111111111111001020030010230401201001020101001110010101010100000111111111111100102003001023040120100102010100111001010101100000000000000<br>000111111111111100102003001023040120100102010100111001010101010101010202020102030055093840293801011002001<br>0293857893113123091001001010001001100000000000000000010203000000000001111111111111001020030010230401201001020101001550938402938010110020010293857893113123091001001010001001100<br>1100101010101010101000111111111111100102003001023040120100102010100111001010101010101010202020102030055093840293801<br>0110020010293857893113123091001001010001001100000000000000000010203000000000001111111111111001020030010230401201001020101001110010101010101010<br>1020202010203005509384029380101<br>10020010293857893113123091001001010001001100000000000000000010203000000000001111111111110011100101010101010101020202010203005509384029380101100200102938578931131230910010010100010011000000000000<br>000000102030000<br>000000011111111111110010200300102304012010010201010011100101010101000001111111111111001020030010230401201001020101<br>0011100101010101010<br>000111111111111100102003001023040120100102010100111001010101010101010202020102030055093840293801011002001029385789311312309<br>100100101000101<br>0101010101020202010203<br>0938402938010110020010293857893113123091001001010001001100000000000000000010203000000000001111111111111001020030010230401201001020101001<br>1100101010101010101020202010203005509384029380101100200102938578931131230910010010100010011000000000000<br>000000102030000<br>000000011111111111110010<br>3001023040120100102010100111001010101010101010202020102030055093840293801<br>011002001029385789311312309100100101000100110000000000000000001020300000000000111111111111100102003001<br>023040120100102010100111001010101010101011001010101010101010202020102030055093840293801011002001<br>02938578931131230910010010100010011000000000000000000000000000102030000000000011111111111110010200300102304012010010201
+			</div>	 
 
 <!-- javascript -->
   <script src="js/script.js"></script>
