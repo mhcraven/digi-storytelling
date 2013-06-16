@@ -124,15 +124,14 @@ map title {
 
 #end-screen {
     position: absolute;
-    top: 100px;
-    left: 100px;
-    height: 50%;
+    text-align: center;
+   	top:0;
+   	left:0;
+    height: 200%;
    	width: 100%;
-    margin: auto;
-    padding: 50px;
+    padding: 100px auto;
     z-index: 1002;
-    background-color: rgba(0,0,0,0.9);
-    border-radius: .5em; 
+    background-color: rgba(0,0,0,0.8); 
     letter-spacing: 0.08em; 
 }
 
@@ -145,7 +144,7 @@ map title {
 .end-buttons {
 	background-color: lightblue;
 	display: inline-block;
-	padding: 10px 10px 15px;
+	padding: 11px 10px 15px;
 	margin-right: 10px;
 	color: #222;
 	font-size: 20px;
@@ -167,6 +166,7 @@ map title {
 }
 
 #wrong-guess, #correct-guess {
+	padding: 10% 20% 0% 20%;
 	font-size: 2em;
 	color: white;
 }
@@ -179,7 +179,7 @@ map title {
 	top: 250px;
 	left: 300px;
 	clear: both;
-	z-index: 1001;
+	z-index: 1000;
 }
 	#instructions {
 		position: absolute;
@@ -189,8 +189,10 @@ map title {
 	}
 
 #home-logo {
-	float: left;
-	margin: 20px 40px auto;
+	position: absolute;
+	top:0;
+	left:0;
+	z-index: 1001;
 }
 
 #home-nav {
@@ -252,13 +254,13 @@ map title {
 
 	.video-clue {
 		position: absolute;
-		top: 250px;
+		top: 300px;
 		right: 30px;
 	}
 
 	audio {
 		position: absolute;
-		top: 500px;
+		top: 550px;
 		right: 30px;
 	}
 

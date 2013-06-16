@@ -10,6 +10,8 @@ function playBkgrdMusic() {
   introMusic.loop = true;
   introMusic.play();
 }
+//INTRO VIDEO
+
 
 
 
@@ -20,7 +22,7 @@ var homeNav = document.getElementById("home-nav");
 
     (function () {
 
-    var introVideo = document.getElementById('intro-video');
+    var introVideo = document.getElementById("intro-video");
     introVideo.addEventListener('ended', removeVideo, false);
 
     function removeVideo(e) {
@@ -31,6 +33,7 @@ var homeNav = document.getElementById("home-nav");
         pBar.setAttribute("class", "visible");
         homeNav.setAttribute("class", "visible");
         playBkgrdMusic();
+       // introVideo.removeEventListener('ended', removeVideo, false);
     }
 
     })();
@@ -49,14 +52,21 @@ var homeNav = document.getElementById("home-nav");
 		    perc++;
 		    updateProgress(perc);
 		    if(perc < 100) {
-		        timer = setTimeout(animateUpdate, 1000);
+		        timer = setTimeout(animateUpdate, 500);
 		    }
 		    if (perc === 100 ){
 				clearTimeout(timer);
 				displayEndScreen();
 			   }
-
 		}
+
+    function reSetTimer(){
+      if(perc === 100 ){
+        timer = 0;
+        perc = 0;
+        updateProgress();
+      }
+    }
 
 //DISPLAY END SCREEN
 
@@ -75,8 +85,7 @@ var homeNav = document.getElementById("home-nav");
 	    });
 	});
 
-//NAV BUTTONS
-    var currentPage = document.getElementsByClassName("visible-page")[0]; 
+//NAV BUTTONS 
 
     var adrianPage = document.getElementById("adrian-page");
     var hermesPage = document.getElementById("hermes-page");
@@ -93,13 +102,12 @@ var homeNav = document.getElementById("home-nav");
     var navBtnadrian = document.getElementById("adrian2");
     navBtnadrian.addEventListener("click", gotoPageAdrian, false);
 
-  
 
     function gotoPageAdrian() {
-      alert ("go to Adrian page from" + currentPage);
       intHeader.setAttribute("class","visible");
-      currentPage.setAttribute("class", "invisible-page");
-      adrianPage.setAttribute("class", "visible-page"); 
+      hideVisiblePage();
+      adrianPage.setAttribute("class", "visible-page");
+
     }
 
     var navBtnHermes = document.getElementById("hermes");
@@ -109,9 +117,8 @@ var homeNav = document.getElementById("home-nav");
     navBtnhermes.addEventListener("click", gotoPageHermes, false);
 
     function gotoPageHermes() {
-      alert ("go to Hermes from" + currentPage);
       intHeader.setAttribute("class","visible");
-      currentPage.setAttribute("class", "invisible-page");
+      hideVisiblePage();
       hermesPage.setAttribute("class", "visible-page"); 
     }
 
@@ -122,9 +129,8 @@ var homeNav = document.getElementById("home-nav");
     navBtnmax.addEventListener("click", gotoPageMax, false);
 
     function gotoPageMax() {
-      alert ("go to Max from" + currentPage);
+      hideVisiblePage();
       intHeader.setAttribute("class","visible");
-      currentPage.setAttribute("class", "invisible-page");
       maxPage.setAttribute("class", "visible-page"); 
     }
 
@@ -135,9 +141,8 @@ var homeNav = document.getElementById("home-nav");
     navBtnshortz.addEventListener("click", gotoPageShortz, false);
 
     function gotoPageShortz() {
-      alert ("go to Shortz from"+ currentPage);
+      hideVisiblePage();
       intHeader.setAttribute("class","visible");
-      currentPage.setAttribute("class", "invisible-page");
       shortzPage.setAttribute("class", "visible-page"); 
     }
 
@@ -148,10 +153,20 @@ var homeNav = document.getElementById("home-nav");
     navBtnsully.addEventListener("click", gotoPageSully, false);
 
     function gotoPageSully() {
-      alert ("go to Sully from" + currentPage);
       intHeader.setAttribute("class","visible");
-      currentPage.setAttribute("class", "invisible-page");
+      hideVisiblePage();
       sullyPage.setAttribute("class", "visible-page"); 
+    }
+
+    function hideVisiblePage(){
+      var theVisiblePages = document.getElementsByClassName('visible-page');
+        for(var i = 0; i < theVisiblePages.length; i++){
+            theVisiblePages[i].setAttribute("class", "invisible-page");
+        }
+    }
+
+    function changeNavicon {
+      if
     }
 
   //END GAME
@@ -193,11 +208,14 @@ var homeNav = document.getElementById("home-nav");
      wrongGuessScreen.setAttribute("class", "invisible");
      correctGuessScreen.setAttribute("class", "invisible");
      endScreen.setAttribute("class", "invisible");
-     currentPage.setAttribute("class", "invisible-page");
-     document.getElementById("pbar_outerdiv").setAttribute("class","invisible");
-     homePage.setAttribute("class", "visible-page");
      intHeader.setAttribute("class","invisible");
-      
+     hideVisiblePage();
+     document.getElementById("pbar_outerdiv").setAttribute("class","invisible");
+     //reSetTimer();
+     homePage.setAttribute("class", "visible-page");
+     homePage.setAttribute("style", "");
+     introVideo.setAttribute("class", "visible");
+
   }
 
   function gotoHomepage(){

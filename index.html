@@ -38,7 +38,7 @@
 				</div>
 				<div id="correct-guess" class="invisible">
 					<img src="images/photo-max.jpg">
-					<p>Congratulations, you guess correctly! It was Max who stole your files and killed Adrian</p>
+					<p>Congratulations, you guessed correctly! It was Max who stole your files and killed Adrian</p>
 				</div>
 				<div id="wrong-guess" class="invisible">
 					<p>Sorry, you guessed wrong! Your files have been lost forever and the hackers get away with their crimes once again.</p>
@@ -53,8 +53,10 @@
 
 		<section id="home-page" class="visible-page">
 				
-			<video width="800" height="" id="intro-video" class="" controls="">
+			<video width="800" height="" id="intro-video" class="" controls>
 	  			<source src="video/intro.mp4" type="video/mp4">
+	  			<source src="video/intro.ogv" type="video/ogv">
+	  			<source src="video/intro.ogg" type="video/ogg">
 				Your browser does not support the video tag.
 			</video> 
 
@@ -67,7 +69,7 @@
 			}
 			</script>
 
-			<h1 id="home-logo"><img src="images/home-logo.png"></h1>
+			<h1 id="home-logo"><img src="images/home-logo.gif" width:"500"></h1>
 			
 			<nav id="home-nav" class="invisible">
 				<ul class="nav-list">
@@ -92,16 +94,16 @@
 							<figcaption> Shortz86 </figcaption>
 					</li>
 					<li class="home-grouping" id="sully">
-							<img src="images/photo-sully.jpg">
-							<img src="images/home-folder-icon.png">
-							<figcaption> Sully </figcaption>
+						<img src="images/photo-sully.jpg">
+						<img src="images/home-folder-icon.png">
+						<figcaption> Sully </figcaption>
 					</li>
 				</ul>
 			</nav>		
 		</section>
 					
 		<header class="invisible">
-			<h2 id="logo"><img src="images/logo.png"></h2>
+			<h2 id="logo"><img src="images/logo.gif"></h2>
 			<nav id="nav-folders">
 				<ul>
 					<li id="adrian2"><img src="images/folder-icon-off.png">
@@ -119,77 +121,69 @@
 		</header>
 		<section id="characters">
 			<section id="adrian-page" class="invisible-page">
-				<img class="files" class="ui-widget-content" src="images/files-shortz.jpg" alt="" usemap="#afiles" >
+				<img class="files" class="ui-widget-content" src="images/shortz/files-shortz.jpg" alt="" usemap="#afiles" >
 
 					<map name="afiles">
-						<area shape="rect" coords="43,70,140,128" rel="lightbox" href="images/email-shortz.jpg" title="Email" alt="Email to Hermes" />
+						<area shape="rect" coords="43,70,140,128" rel="lightbox" href="images/adrian/email-adrian.jpg" title="Email" alt="Email to Hermes" />
 						
-						<area shape="rect" coords="210,50,336,128" rel="lightbox" href="images/im-shortz.jpg" title="Email" alt="IM from Shortz to Hermes" />
+						<area shape="rect" coords="210,50,336,128" rel="lightbox" href="images/adrian/calendar.jpg" title="Email" alt="IM from Shortz to Hermes" />
 
-						<area shape="rect" coords="30,250,150,315" rel="lightbox" href="images/email-shortz2.jpg" title="Email" alt="Email from Hermes" />
+						<area shape="rect" coords="30,250,150,315" rel="lightbox" href="images/adrian/obit-adrian.jpg" title="Email" alt="Email from Hermes"/>
 					</map>
 
-				<img class="bio" src="images/bio-shortz.png" alt="bio" usemap="#clue1" >
+				<img class="bio" src="images/adrian/bio-adrian.png" alt="bio" usemap="#clue1"/>
 					
 					<map name="clue1">
 						<area shape="rect" coords="194,375,472,402" href="hermes.html" title="Bio" alt="Herme's Bio" />
-			
-				
+
+				<video width="320" class="video-clue" height="240" controls="">
+		  			
+		  			<source src="video/adrian/video-adrian.mp4" type="video/mp4">
+		  			
+					Your browser does not support the video tag.
+				</video> 
 			</section>
 
 			<section id="hermes-page" class="invisible-page">
-				<img class="files" class="ui-widget-content" src="images/files-shortz.jpg" alt="" usemap="#hfiles" >
+				<img class="files" class="ui-widget-content" src="images/shortz/files-shortz.jpg" alt="" usemap="#hfiles" >
 	
 					<map name="hfiles">
-						<area shape="rect" coords="43,70,140,128" rel="lightbox" href="images/email-shortz.jpg" title="Email" alt="Email to Hermes" />
+						<area shape="rect" coords="43,70,140,128" rel="lightbox" href="images/blowkss-hermes.gif" title="Gif" alt="Hermes luring her online prey" />
 						
-						<area shape="rect" coords="210,50,336,128" rel="lightbox" href="images/im-shortz.jpg" title="Email" alt="IM from Shortz to Hermes" />
+						<area shape="rect" coords="210,50,336,128" rel="lightbox" href="images/im-shortz.jpg" title="Card" alt="Bloody business card" />
 
-						<area shape="rect" coords="30,250,150,315" rel="lightbox" href="images/email-shortz2.jpg" title="Email" alt="Email from Hermes" />
+						<area shape="rect" coords="30,250,150,315" rel="lightbox" href="images/email-shortz2.jpg" title="Facebook" alt="Email from Hermes" />
+
+						<area shape="rect" coords="30,250,150,315" rel="lightbox" href="images/email-shortz2.jpg" title="Map" alt="Map of Adrian's Apartment" />
 					</map>
 
-				<img class="bio" src="images/bio-hermes.png" alt="bio" usemap="#hclue1" >
-					
-					
+				<img class="bio" src="images/hermes/bio-hermes.png" alt="bio" usemap="#hclue1" >
+
+				<video width="320" class="video-clue" height="240" controls="">
+		  			
+		  			<source src="video/hermes/videoskype-hermes.mp4" type="video/mp4">
+		  			
+					Your browser does not support the video tag.
+				</video> 
 			
 				
 			</section>
 
 			<section id="max-page" class="invisible-page">
-				<img class="files" class="ui-widget-content" src="images/files-shortz.jpg" alt="" usemap="#hfiles" >
+				<img class="files" class="ui-widget-content" src="images/shortz/files-shortz.jpg" alt="" usemap="#hfiles" >
 	
 					<map name="hfiles">
-						<area shape="rect" coords="43,70,140,128" rel="lightbox" href="images/email-shortz.jpg" title="Email" alt="Email to Hermes" />
+						<area shape="rect" coords="43,70,140,128" rel="lightbox" href="images/max/idcards-max.png" title="IDs" alt="Max's ID cards" />
 						
-						<area shape="rect" coords="210,50,336,128" rel="lightbox" href="images/im-shortz.jpg" title="Email" alt="IM from Shortz to Hermes" />
+						<area shape="rect" coords="210,50,336,128" rel="lightbox" href="images/max/id-x.png" title="ID" alt="Another ID Card of Max's" />
 
-						<area shape="rect" coords="30,250,150,315" rel="lightbox" href="images/email-shortz2.jpg" title="Email" alt="Email from Hermes" />
+						<area shape="rect" coords="30,250,150,315" rel="lightbox" href="images/max/calendar-x.png" title="Calendar" alt="Max's calendar" />
 					</map>
 
-				<img class="bio" src="images/bio-max.png" alt="bio" usemap="#mclue1">
-					
-					
-			</section>
-
-			<section id="shortz-page" class="invisible-page">
-				<img class="files" class="ui-widget-content" src="images/files-shortz.jpg" alt="" usemap="#shfiles" >
-
-					<map name="shfiles">
-						<area shape="rect" coords="43,70,140,128" rel="lightbox" href="images/email-shortz.jpg" title="Email" alt="Email to Hermes" />
-						
-						<area shape="rect" coords="210,50,336,128" rel="lightbox" href="images/im-shortz.jpg" title="Email" alt="IM from Shortz to Hermes" />
-
-						<area shape="rect" coords="30,250,150,315" rel="lightbox" href="images/email-shortz2.jpg" title="Email" alt="Email from Hermes" />
-					</map>
-
-				<img class="bio" src="images/bio-shortz.png" alt="bio" usemap="#shclue1" />
-					
-					<map name="shclue1">
-						<area shape="rect" coords="194,375,472,402" href="hermes.html" title="Bio" alt="Herme's Bio" />
-			
+				<img class="bio" src="images/max/bio-max.png" alt="bio" usemap="#mclue1">
 				<video width="320" class="video-clue" height="240" controls="">
 		  			
-		  			<source src="video/intro.mp4" type="video/mp4">
+		  			<source src="video/max/video-max.mp4" type="video/mp4">
 		  			
 					Your browser does not support the video tag.
 				</video> 
@@ -197,27 +191,58 @@
 		 			 <source src="audio/phoneconv-shortz.mp3" title="Telephone Recording" type="audio/mp3">
 					Your browser does not support the audio element.
 				</audio>
-			</div>
+					
+			</section>
+
+			<section id="shortz-page" class="invisible-page">
+				<img class="files" class="ui-widget-content" src="images/shortz/files-shortz.jpg" alt="" usemap="#shfiles" >
+
+					<map name="shfiles">
+						<area shape="rect" coords="43,70,140,128" rel="lightbox" href="images/shortz/email-shortz.jpg" title="Email" alt="Email to Hermes" />
+						
+						<area shape="rect" coords="210,50,336,128" rel="lightbox" href="images/shortz/im-shortz.jpg" title="Email" alt="IM from Shortz to Hermes" />
+
+						<area shape="rect" coords="30,250,150,315" rel="lightbox" href="images/shortz/email-shortz2.jpg" title="Email" alt="Email from Hermes" />
+					</map>
+
+				<img class="bio" src="images/shortz/bio-shortz.png" alt="bio" usemap="#shclue1" />
+					
+					<map name="shclue1">
+						<area shape="rect" coords="194,375,472,402" href="hermes/hermes.html" title="Bio" alt="Herme's Bio" />
+			
+				<video width="320" class="video-clue" height="240" controls="">
+		  			
+		  			<source src="video/shortz/vid-shortz.mp4" type="video/mp4">
+		  			
+					Your browser does not support the video tag.
+				</video> 
+				<audio controls preload="auto" autobuffer>
+		 			 <source src="audio/phoneconv-shortz.mp3" title="Telephone Recording" type="audio/mp3">
+					Your browser does not support the audio element.
+				</audio>
+			
 		 </section>
 
 		 <section id="sully-page" class="invisible-page">
 
-		 	<img class="files" class="ui-widget-content" src="images/files-shortz.jpg" alt="" usemap="#sufiles" >
+		 	<img class="files" class="ui-widget-content" src="images/shortz/files-shortz.jpg" alt="" usemap="#sufiles" >
 
 					<map name="sufiles">
-						<area shape="rect" coords="43,70,140,128" rel="lightbox" href="images/email-shortz.jpg" title="Email" alt="Email to Hermes" />
+						<area shape="rect" coords="43,70,140,128" rel="lightbox" href="images/sully/email-sully.jpg" title="Email" alt="Email to Max" />
 						
-						<area shape="rect" coords="210,50,336,128" rel="lightbox" href="images/im-shortz.jpg" title="Email" alt="IM from Shortz to Hermes" />
-
-						<area shape="rect" coords="30,250,150,315" rel="lightbox" href="images/email-shortz2.jpg" title="Email" alt="Email from Hermes" />
+						<area shape="rect" coords="210,50,336,128" rel="lightbox" href="images/sully/workorder-sully.jpg" title="Email" alt="IM from Shortz to Hermes" />
 					</map>
 
-				<img class="bio" src="images/bio-sully.png" alt="bio" usemap="#shclue1" />
-					
-					
-				
+				<img class="bio" src="images/sully/bio-sully.png" alt="bio" usemap="#shclue1" />
+
+				<video width="320" class="video-clue" height="240" controls="">
+		  			
+		  			<source src="video/sully/video-sully.mp4" type="video/mp4">
+		  			
+					Your browser does not support the video tag.
+				</video> 
 		</section>
-		</section>
+	</div>
 
 		<div id="background">
 			11001020030010230401201001020101001110010101010101010102020201020300550938402938010<br>1100200102938578931131230910010010100010011000000000000000000102030000000000011111111111110010200300102304012010010201010011100101010101010101020202010203005509384029380101100200102938578931131230910010010100010<br>0110000000000000000001020300000000000111111111111100102003001023040120100102010100111001010101010101010202020102030055093840293801011002001029385789311312309100100101000100<br>11000000000000000000102030000000000011111111111110010200300102304012010010201010011100101010101010101020202010203005509384029380101100200102938578931131230<br>91001001010001001100000000000000000010203000000000001111111111111001020030010230401201<br>
