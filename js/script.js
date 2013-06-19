@@ -33,7 +33,7 @@ var homeNav = document.getElementById("home-nav");
         pBar.setAttribute("class", "visible");
         homeNav.setAttribute("class", "visible");
         playBkgrdMusic();
-       // introVideo.removeEventListener('ended', removeVideo, false);
+        introVideo.removeEventListener('ended', removeVideo, false);
     }
 
     })();
@@ -42,6 +42,7 @@ var homeNav = document.getElementById("home-nav");
 
 		var timer = 0;
 		var perc = 0;
+    
 
 		function updateProgress(percentage) {
 		    $('#pbar_innerdiv').css("width", percentage + "%");
@@ -61,11 +62,10 @@ var homeNav = document.getElementById("home-nav");
 		}
 
     function reSetTimer(){
-      if(perc === 100 ){
+        document.getElementById("pbar_innertext").innerHTML = "Preparing to Download...";
         timer = 0;
         perc = 0;
         updateProgress();
-      }
     }
 
 //DISPLAY END SCREEN
@@ -102,12 +102,15 @@ var homeNav = document.getElementById("home-nav");
     var navBtnadrian = document.getElementById("adrian2");
     navBtnadrian.addEventListener("click", gotoPageAdrian, false);
 
+    var theOnIconSrc = "images/folder-icon-on.png";
+    var theOffIconSrc = "images/folder-icon-off.png";
 
     function gotoPageAdrian() {
       intHeader.setAttribute("class","visible");
       hideVisiblePage();
       adrianPage.setAttribute("class", "visible-page");
-
+      turnOnIconOff();
+      navBtnadrian.getElementsByTagName('img')[0].setAttribute("src", theOnIconSrc);
     }
 
     var navBtnHermes = document.getElementById("hermes");
@@ -119,7 +122,9 @@ var homeNav = document.getElementById("home-nav");
     function gotoPageHermes() {
       intHeader.setAttribute("class","visible");
       hideVisiblePage();
-      hermesPage.setAttribute("class", "visible-page"); 
+      hermesPage.setAttribute("class", "visible-page");
+      turnOnIconOff();
+      navBtnhermes.getElementsByTagName('img')[0].setAttribute("src", theOnIconSrc);
     }
 
     var navBtnMax = document.getElementById("max");
@@ -131,7 +136,9 @@ var homeNav = document.getElementById("home-nav");
     function gotoPageMax() {
       hideVisiblePage();
       intHeader.setAttribute("class","visible");
-      maxPage.setAttribute("class", "visible-page"); 
+      maxPage.setAttribute("class", "visible-page");
+      turnOnIconOff();
+      navBtnmax.getElementsByTagName('img')[0].setAttribute("src", theOnIconSrc);
     }
 
     var navBtnShortz = document.getElementById("shortz");
@@ -143,7 +150,9 @@ var homeNav = document.getElementById("home-nav");
     function gotoPageShortz() {
       hideVisiblePage();
       intHeader.setAttribute("class","visible");
-      shortzPage.setAttribute("class", "visible-page"); 
+      shortzPage.setAttribute("class", "visible-page");
+      turnOnIconOff();
+      navBtnshortz.getElementsByTagName('img')[0].setAttribute("src", theOnIconSrc);
     }
 
     var navBtnSully = document.getElementById("sully");
@@ -152,10 +161,12 @@ var homeNav = document.getElementById("home-nav");
     var navBtnsully = document.getElementById("sully2");
     navBtnsully.addEventListener("click", gotoPageSully, false);
 
-    function gotoPageSully() {
-      intHeader.setAttribute("class","visible");
+    function gotoPageSully(e) {
       hideVisiblePage();
-      sullyPage.setAttribute("class", "visible-page"); 
+      intHeader.setAttribute("class","visible");
+      sullyPage.setAttribute("class", "visible-page");
+      turnOnIconOff();
+      navBtnsully.getElementsByTagName('img')[0].setAttribute("src", theOnIconSrc);
     }
 
     function hideVisiblePage(){
@@ -165,9 +176,18 @@ var homeNav = document.getElementById("home-nav");
         }
     }
 
-    function changeNavicon {
-      if
+    function turnOnIconOff() {
+      var theIcons = document.getElementsByTagName("img");
+
+      for(var i = 0; i < theIcons.length; i++){
+        if (theIcons[i].getAttribute("src") === theOnIconSrc){
+            theIcons[i].setAttribute("src", theOffIconSrc);
+        } else { 
+          continue;
+          }
+      }
     }
+
 
   //END GAME
 
@@ -197,11 +217,13 @@ var homeNav = document.getElementById("home-nav");
   function wrongGuess() {
    	guessScreen.setAttribute("class", "invisible");
     wrongGuessScreen.setAttribute("class", "visible");
+    playAgainBtn.setAttribute("class", "visible");
 	}
 
 	function correctGuess() {
 		guessScreen.setAttribute("class", "invisible");
     correctGuessScreen.setAttribute("class", "visible");
+    playAgainBtn.setAttribute("class", "visible");
 	}
   
   function playAgain (){
@@ -210,11 +232,14 @@ var homeNav = document.getElementById("home-nav");
      endScreen.setAttribute("class", "invisible");
      intHeader.setAttribute("class","invisible");
      hideVisiblePage();
-     document.getElementById("pbar_outerdiv").setAttribute("class","invisible");
-     //reSetTimer();
+     document.getElementById("pbar_outerdiv").setAttribute("class","visible");
+     reSetTimer();
      homePage.setAttribute("class", "visible-page");
      homePage.setAttribute("style", "");
-     introVideo.setAttribute("class", "visible");
+     //introVideo.setAttribute("class", "visible");
+
+     var theInstructions = document.getElementById("instructions");
+     theInstructions.setAttribute("class", "visible");
 
   }
 

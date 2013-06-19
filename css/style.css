@@ -32,6 +32,12 @@ h3 {
 	font-size: 2em;
 }
 
+h4 {
+	color: white;
+	font-family: 'Titillium Web', sans-serif;
+	font-size: 1.5em;
+}
+
 figcaption {
 		font-family: 'Average Sans', sans-serif;
 		font-size: 1em;
@@ -46,8 +52,8 @@ figcaption {
 		background-color: white;
 		z-index: 2; 
 		top: 150px;
-		right: 50px;
-		width: 400px; 
+		right: 200px;
+		width: 300px; 
 		height: 30px; 
 		border: 3px solid lightgray; 
 		border-radius: 7px; 
@@ -137,7 +143,7 @@ map title {
 
 #play-again-btn {
 	position: relative;
-	margin-top: 25px;
+	margin: 25px auto;
 	font-size: 1em;
 }
 
@@ -198,7 +204,7 @@ map title {
 #home-nav {
 	position: absolute;
 	top: 350px;
-	left: 0px;
+	left: 100px;
 	min-width: 75%;
 
 }
@@ -236,7 +242,7 @@ map title {
 } 
 
 	li {
-		float: right;
+		float: left;
 		margin-left: 5%;
 	}
 	

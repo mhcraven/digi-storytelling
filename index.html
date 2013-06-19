@@ -29,7 +29,8 @@
 
 		<div id="end-screen" class="invisible">
 				<div id="guess-screen">
-					<h3>Who hacked you?</h3>
+					<h3>Game Over</h3>
+					<h4>Who Hacked You?</h4>
 					<input id="adrian-button" class="end-buttons" type="button" value="Adrian?">
 					<input id="hermes-button" class="end-buttons" type="button" value="Hermes?">
 					<input id="max-button" class="end-buttons" type="button" value="Max?">
@@ -38,12 +39,12 @@
 				</div>
 				<div id="correct-guess" class="invisible">
 					<img src="images/photo-max.jpg">
-					<p>Congratulations, you guessed correctly! It was Max who stole your files and killed Adrian</p>
+					<p>Congratulations, you guessed correctly and have saved your files. It was Max who stole your files. Max, who killed Adrian, clearly had the most to lose. </p>
 				</div>
 				<div id="wrong-guess" class="invisible">
-					<p>Sorry, you guessed wrong! Your files have been lost forever and the hackers get away with their crimes once again.</p>
+					<p>Sorry, you guessed incorrectly. Your files have been lost forever and the hackers get away with their crimes once again.</p>
 				</div>
-				<input id="play-again-btn" type="button" value="PLAY AGAIN">
+				<input id="play-again-btn" class="invisible" type="button" value="PLAY AGAIN">
 		</div>
 
 		<div id="pbar_outerdiv" class="invisible" >
@@ -121,14 +122,14 @@
 		</header>
 		<section id="characters">
 			<section id="adrian-page" class="invisible-page">
-				<img class="files" class="ui-widget-content" src="images/shortz/files-shortz.jpg" alt="" usemap="#afiles" >
+				<img class="files" class="ui-widget-content" src="images/adrian/files-adrian.jpg"  alt="" usemap="#afiles" >
 
 					<map name="afiles">
-						<area shape="rect" coords="43,70,140,128" rel="lightbox" href="images/adrian/email-adrian.jpg" title="Email" alt="Email to Hermes" />
-						
-						<area shape="rect" coords="210,50,336,128" rel="lightbox" href="images/adrian/calendar.jpg" title="Email" alt="IM from Shortz to Hermes" />
+						<area shape="rect" coords="44,58,172,148" rel="lightbox" href="images/adrian/email-adrian.jpg" title="Email" alt="Email to Hermes" />
 
-						<area shape="rect" coords="30,250,150,315" rel="lightbox" href="images/adrian/obit-adrian.jpg" title="Email" alt="Email from Hermes"/>
+						<area shape="rect" coords="283,65,350,150" rel="lightbox" href="images/adrian/obit-adrian.jpg" title="Email" alt="Email from Hermes"/>
+
+						<area shape="rect" coords="58,166,157,246" rel="lightbox" href="images/adrian/calendar.jpg" title="Email" alt="IM from Shortz to Hermes" />
 					</map>
 
 				<img class="bio" src="images/adrian/bio-adrian.png" alt="bio" usemap="#clue1"/>
@@ -145,16 +146,17 @@
 			</section>
 
 			<section id="hermes-page" class="invisible-page">
-				<img class="files" class="ui-widget-content" src="images/shortz/files-shortz.jpg" alt="" usemap="#hfiles" >
+				<img class="files" class="ui-widget-content" src="images/hermes/files-hermes.jpg" alt="" usemap="#hfiles" >
 	
 					<map name="hfiles">
-						<area shape="rect" coords="43,70,140,128" rel="lightbox" href="images/blowkss-hermes.gif" title="Gif" alt="Hermes luring her online prey" />
 						
-						<area shape="rect" coords="210,50,336,128" rel="lightbox" href="images/im-shortz.jpg" title="Card" alt="Bloody business card" />
+						<area shape="rect" coords="30,76,154,149" rel="lightbox" href="images/hermes/facebook-hermes.jpg" title="Facebook" alt="Email from Hermes" />
 
-						<area shape="rect" coords="30,250,150,315" rel="lightbox" href="images/email-shortz2.jpg" title="Facebook" alt="Email from Hermes" />
+						<area shape="rect" coords="184,72,339,139" rel="lightbox" href="images/hermes/bizcard-hermes.jpg" title="Card" alt="Bloody business card" />
 
-						<area shape="rect" coords="30,250,150,315" rel="lightbox" href="images/email-shortz2.jpg" title="Map" alt="Map of Adrian's Apartment" />
+						<area shape="rect" coords="22,185,172,239" rel="lightbox" href="images/hermes/fingerprints-hermes.jpg" title="Map" alt="Map of Adrian's Apartment" />
+
+						<area shape="rect" coords="206,173,317,234" rel="lightbox" href="images/hermes/blowkss-hermes.gif" title="Gif" alt="Hermes luring her online prey" />
 					</map>
 
 				<img class="bio" src="images/hermes/bio-hermes.png" alt="bio" usemap="#hclue1" >
@@ -170,14 +172,15 @@
 			</section>
 
 			<section id="max-page" class="invisible-page">
-				<img class="files" class="ui-widget-content" src="images/shortz/files-shortz.jpg" alt="" usemap="#hfiles" >
+				<img class="files" class="ui-widget-content" src="images/max/files-max.jpg" alt="" usemap="#hfiles" >
 	
 					<map name="hfiles">
-						<area shape="rect" coords="43,70,140,128" rel="lightbox" href="images/max/idcards-max.png" title="IDs" alt="Max's ID cards" />
+						<area shape="rect" coords="66,74,155,143" rel="lightbox" href="images/max/idcards-max.png" title="IDs" alt="Max's ID cards" />
 						
-						<area shape="rect" coords="210,50,336,128" rel="lightbox" href="images/max/id-x.png" title="ID" alt="Another ID Card of Max's" />
+						<area shape="rect" coords="269,68,58,147" rel="lightbox" href="images/max/id-x.png" title="ID" alt="Another ID Card of Max's" />
 
-						<area shape="rect" coords="30,250,150,315" rel="lightbox" href="images/max/calendar-x.png" title="Calendar" alt="Max's calendar" />
+						<area shape="rect" coords="280,180,341,260" rel="lightbox" href="images/max/calendar-x.png" title="Calendar" alt="Max's calendar" />
+
 					</map>
 
 				<img class="bio" src="images/max/bio-max.png" alt="bio" usemap="#mclue1">
@@ -202,7 +205,7 @@
 						
 						<area shape="rect" coords="210,50,336,128" rel="lightbox" href="images/shortz/im-shortz.jpg" title="Email" alt="IM from Shortz to Hermes" />
 
-						<area shape="rect" coords="30,250,150,315" rel="lightbox" href="images/shortz/email-shortz2.jpg" title="Email" alt="Email from Hermes" />
+						<area shape="rect" coords="212,158,326,211" rel="lightbox" href="images/shortz/email-shortz2.jpg" title="Email" alt="Email from Hermes" />
 					</map>
 
 				<img class="bio" src="images/shortz/bio-shortz.png" alt="bio" usemap="#shclue1" />
@@ -225,12 +228,18 @@
 
 		 <section id="sully-page" class="invisible-page">
 
-		 	<img class="files" class="ui-widget-content" src="images/shortz/files-shortz.jpg" alt="" usemap="#sufiles" >
+		 	<img class="files" class="ui-widget-content" src="images/sully/files-sully.jpg" alt="" usemap="#sufiles" >
 
 					<map name="sufiles">
-						<area shape="rect" coords="43,70,140,128" rel="lightbox" href="images/sully/email-sully.jpg" title="Email" alt="Email to Max" />
 						
-						<area shape="rect" coords="210,50,336,128" rel="lightbox" href="images/sully/workorder-sully.jpg" title="Email" alt="IM from Shortz to Hermes" />
+						<area shape="rect" coords="44,70,153,129" rel="lightbox" href="images/sully/email-sully2.png" title="Email" alt="Email from Adrian" />
+
+						<area shape="rect" coords="229,72,307,134" rel="lightbox" href="images/sully/email-sully.png" title="Email" alt="Email to Max" />
+					
+						
+						<area shape="rect" coords="58,156,121,217" rel="lightbox" href="images/sully/keycards-sully.png" title="Key Cards" alt="IM from Shortz to Hermes" />
+
+						<area shape="rect" coords="225,157,313,216" rel="lightbox" href="images/sully/workorder-sully.jpg" title="Work Order" alt="Fake Work Order" />
 					</map>
 
 				<img class="bio" src="images/sully/bio-sully.png" alt="bio" usemap="#shclue1" />
