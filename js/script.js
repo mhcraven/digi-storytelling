@@ -2,47 +2,49 @@
 
 window.onload = function(){
 
+
 //AUDIO
 
-function playBkgrdMusic() {
-  var introMusic = document.getElementById("intro-music");
+  function playBkgrdMusic() {
+    var introMusic = document.getElementById("intro-music");
 
-  introMusic.loop = true;
-  introMusic.play();
-}
-//INTRO VIDEO
-
-
+    introMusic.loop = true;
+    introMusic.play();
+  }
+  //INTRO VIDEO
 
 
-//REMOVE INTRO VIDEO
+  var pBar = document.getElementById("pbar_outerdiv");
+  var homeNav = document.getElementById("home-nav");
 
-var pBar = document.getElementById("pbar_outerdiv");
-var homeNav = document.getElementById("home-nav");
+  var skipVideoBtn = document.getElementById("skip-video-btn");
+  skipVideoBtn.addEventListener('click', removeVideo, false);
 
-    (function () {
+  var introVideo = document.getElementById("intro-video");
+  introVideo.addEventListener('ended', removeVideo, false);
 
-    var introVideo = document.getElementById("intro-video");
-    introVideo.addEventListener('ended', removeVideo, false);
-
-    function removeVideo(e) {
-        if(!e) { 
-          e = window.event; 
-        }
-        introVideo.setAttribute("class", "invisible");
-        pBar.setAttribute("class", "visible");
-        homeNav.setAttribute("class", "visible");
-        playBkgrdMusic();
-        introVideo.removeEventListener('ended', removeVideo, false);
-    }
-
-    })();
 
 //PLAY GAME
 
+  function startGame() {
+      playBkgrdMusic();
+      skipVideoBtn.setAttribute("class", "invisible");
+      pBar.setAttribute("class", "visible");
+      homeNav.setAttribute("class", "visible");
+      introVideo.removeEventListener('ended', removeVideo, false);
+  }
+
+  function removeVideo(e) {
+        if(!e) { 
+          e = window.event;  
+        } 
+        introVideo.setAttribute("class", "invisible");
+        startGame();
+  }
+
+//PROGRESS BAR
 		var timer = 0;
 		var perc = 0;
-    
 
 		function updateProgress(percentage) {
 		    $('#pbar_innerdiv').css("width", percentage + "%");
@@ -71,9 +73,11 @@ var homeNav = document.getElementById("home-nav");
 //DISPLAY END SCREEN
 
 	var endScreen = document.getElementById("end-screen");
+  var guessScreen = document.getElementById("guess-screen");
 
 	function displayEndScreen() {
 		endScreen.setAttribute("class", "visible");
+    guessScreen.setAttribute("class", "visible");
 	}
 
 	$(document).ready(function() {
@@ -191,27 +195,29 @@ var homeNav = document.getElementById("home-nav");
 
   //END GAME
 
-   var endBtnAdrian = document.getElementById("adrian-button");
-   endBtnAdrian.addEventListener('click', wrongGuess, false);
+    var endBtnAdrian = document.getElementById("adrian-button");
+    endBtnAdrian.addEventListener('click', wrongGuess, false);
 
-   var playAgainBtn = document.getElementById("play-again-btn");
-   playAgainBtn.addEventListener('click', playAgain, false);
+    var playAgainBtn = document.getElementById("play-again-btn");
+    playAgainBtn.addEventListener('click', playAgain, false);
 
-   var hermesBtn = document.getElementById("hermes-button");
-   hermesBtn.addEventListener('click', wrongGuess, false);
+    var hermesBtn = document.getElementById("hermes-button");
+    hermesBtn.addEventListener('click', wrongGuess, false);
 
-   var endBtnX = document.getElementById("max-button");
-   endBtnX.addEventListener('click', correctGuess, false);
+    var endBtnX = document.getElementById("max-button");
+    endBtnX.addEventListener('click', correctGuess, false);
 
-   var endBtnShortz = document.getElementById("shortz-button");
-   endBtnShortz.addEventListener('click', wrongGuess, false);
+    var endBtnShortz = document.getElementById("shortz-button");
+    endBtnShortz.addEventListener('click', wrongGuess, false);
 
-   var endBtnSully = document.getElementById("sully-button");
-   endBtnSully.addEventListener('click', wrongGuess, false);
+    var endBtnSully = document.getElementById("sully-button");
+    endBtnSully.addEventListener('click', wrongGuess, false);
 
-   var guessScreen = document.getElementById("guess-screen");
-   var correctGuessScreen = document.getElementById("correct-guess");
-   var wrongGuessScreen = document.getElementById("wrong-guess");
+    var correctGuessScreen = document.getElementById("correct-guess");
+    var wrongGuessScreen = document.getElementById("wrong-guess");
+    
+    var guessAgainBtn = document.getElementById("guess-again-btn");
+    guessAgainBtn.addEventListener("click", displayEndScreen, false);
 
 
   function wrongGuess() {
@@ -236,6 +242,7 @@ var homeNav = document.getElementById("home-nav");
      reSetTimer();
      homePage.setAttribute("class", "visible-page");
      homePage.setAttribute("style", "");
+     guessAgainBtn.setAttribute("class", "visible");
      //introVideo.setAttribute("class", "visible");
 
      var theInstructions = document.getElementById("instructions");
@@ -245,7 +252,6 @@ var homeNav = document.getElementById("home-nav");
 
   function gotoHomepage(){
       introVideo.removeAttribute("class", "invisible");   
-
   }
 
 }();

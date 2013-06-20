@@ -12,19 +12,19 @@ body {
 	font-size: 1em;
 }
 
-#background {
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	z-index: -1;
-	font-family: 'Titillium Web', sans-serif;
-	overflow: hidden;
-	font-size: 1em;
-	color: #6666FF;
-	letter-spacing: 1px;
-}
+	#background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		z-index: -1;
+		font-family: 'Titillium Web', sans-serif;
+		overflow: hidden;
+		font-size: 1em;
+		color: #6666FF;
+		letter-spacing: 1px;
+	}
 
 h3 {
 	color: lightblue;
@@ -39,47 +39,46 @@ h4 {
 }
 
 figcaption {
-		font-family: 'Average Sans', sans-serif;
-		font-size: 1em;
-		color: white;
-		text-shadow: 1px 1px 1px #111;
-		margin-top: -1px;
-		letter-spacing: 1px;
+	font-family: 'Average Sans', sans-serif;
+	font-size: 1em;
+	color: white;
+	text-shadow: 1px 1px 1px #111;
+	margin-top: -1px;
+	letter-spacing: 1px;
 }
-
 	#pbar_outerdiv {
 		position: absolute;
 		background-color: white;
 		z-index: 2; 
 		top: 150px;
 		right: 200px;
-		width: 300px; 
-		height: 30px; 
-		border: 3px solid lightgray; 
+		width: 250px; 
+		height: 25px; 
+		border: 1px solid red; 
 		border-radius: 7px; 
 		-moz-border-radius: 7px;
 	}
 
 	#pbar_innerdiv {
-		 background-color: red; 
-		 z-index: 3; 
-		 height: 100%; 
-		 font-size: 1em;
-		 width: 0%;
-		 margin: 0px;
-		 padding: 1px;
+		background-color: red; 
+		z-index: 3; 
+		height: 100%; 
+		font-size: 1em;
+		width: 0%;
+		margin: 0px;
+		padding: 1px;
 	}
 
 	#pbar_innertext {
-		 z-index: 4; 
-		 position: absolute; 
-		 top: 5px; left: 0; 
-		 width: 100%; 
-		 height: 100%; 
-		 color: black; 
-		 font-family: arial; 
-		 text-align: center;
-		 font-size: 1em;
+		z-index: 4; 
+		position: absolute; 
+		top: 5px; left: 0; 
+		width: 100%; 
+		height: 100%; 
+		color: black; 
+		font-family: arial; 
+		text-align: center;
+		font-size: 1em;
 	}
 
 p {
@@ -112,7 +111,6 @@ map title {
 
 .visible {
 	display: block;
-
 }
 
 .invisible-page {
@@ -144,6 +142,13 @@ map title {
 #play-again-btn {
 	position: relative;
 	margin: 25px auto;
+	font-size: 1em;
+}
+
+#guess-again-btn {
+	position: absolute;
+	top: 200px;
+	right: 300px;
 	font-size: 1em;
 }
 
@@ -196,15 +201,15 @@ map title {
 
 #home-logo {
 	position: absolute;
-	top:0;
-	left:0;
+	top: 0;
+	left: 0;
 	z-index: 1001;
 }
 
 #home-nav {
 	position: absolute;
-	top: 350px;
-	left: 100px;
+	top: 360px;
+	left: 200px;
 	min-width: 75%;
 
 }
@@ -221,10 +226,16 @@ map title {
 	}
 
 	.home-grouping img:first-child {
-		  border: solid 4px #FFF;
+		border: solid 4px #FFF;
 	}
 
-
+	#skip-video-btn {
+		position: absolute;
+		margin-top: 10px;
+		top: 725px;
+		left: 300px;
+		font-size: 1em;
+	}
 /*CHARACTER PAGES*/
 
 #logo {
@@ -264,11 +275,21 @@ map title {
 		right: 30px;
 	}
 
-	audio {
+	.audio-clue {
 		position: absolute;
-		top: 550px;
+		top: 600px;
 		right: 30px;
 	}
+		.audio-caption {
+			padding-bottom: 10px;
+			font-family: 'Average Sans', sans-serif;
+			font-size: 1em;
+			color: white;
+			text-shadow: 1px 1px 1px #111;
+			margin-top: -1px;
+			letter-spacing: 1px;
+		}
+
 
 
 
