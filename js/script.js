@@ -36,12 +36,14 @@ window.onload = function(){
 
   function removeVideo(e) {
         if(!e) { 
-          e = window.event;  
+          e = window.event; 
         } 
-        introVideo.setAttribute("class", "invisible");
-        startGame();
+        if ( introVideo.play ) {
+            introVideo.pause(); 
+          }
+          introVideo.setAttribute("class", "invisible");
+          startGame(); 
   }
-
 //PROGRESS BAR
 		var timer = 0;
 		var perc = 0;
@@ -55,7 +57,7 @@ window.onload = function(){
 		    perc++;
 		    updateProgress(perc);
 		    if(perc < 100) {
-		        timer = setTimeout(animateUpdate, 500);
+		        timer = setTimeout(animateUpdate, 5000);
 		    }
 		    if (perc === 100 ){
 				clearTimeout(timer);
@@ -64,10 +66,11 @@ window.onload = function(){
 		}
 
     function reSetTimer(){
+        document.getElementById("pbar_outerdiv").setAttribute("class","visible");
         document.getElementById("pbar_innertext").innerHTML = "Preparing to Download...";
         timer = 0;
         perc = 0;
-        updateProgress();
+        animateUpdate();
     }
 
 //DISPLAY END SCREEN
@@ -78,6 +81,7 @@ window.onload = function(){
 	function displayEndScreen() {
 		endScreen.setAttribute("class", "visible");
     guessScreen.setAttribute("class", "visible");
+    playAgainBtn.setAttribute("class", "invisible");
 	}
 
 	$(document).ready(function() {
@@ -192,7 +196,6 @@ window.onload = function(){
       }
     }
 
-
   //END GAME
 
     var endBtnAdrian = document.getElementById("adrian-button");
@@ -201,8 +204,8 @@ window.onload = function(){
     var playAgainBtn = document.getElementById("play-again-btn");
     playAgainBtn.addEventListener('click', playAgain, false);
 
-    var hermesBtn = document.getElementById("hermes-button");
-    hermesBtn.addEventListener('click', wrongGuess, false);
+    var endBtnHermes = document.getElementById("hermes-button");
+    endBtnHermes.addEventListener('click', wrongGuess, false);
 
     var endBtnX = document.getElementById("max-button");
     endBtnX.addEventListener('click', correctGuess, false);
@@ -220,7 +223,23 @@ window.onload = function(){
     guessAgainBtn.addEventListener("click", displayEndScreen, false);
 
 
-  function wrongGuess() {
+  function wrongGuess( e ) {
+        switch (e.target ) {
+
+        case endBtnAdrian:
+          wrongGuessScreen.innerHTML = "Sorry, you guessed incorrectly. Adrian did not steal your files. In fact, some evidence suggests that he is dead.";
+          break;
+        case endBtnHermes:
+          wrongGuessScreen.innerHTML = "Sorry, you guessed incorrectly. Hermes did not steal your files. Although, she is closely associated with a more likely suspect.";
+          break;
+        case endBtnShortz:
+          wrongGuessScreen.innerHTML = "Sorry, you guessed incorrectly. Shortz86 did not steal your files. However, by meddling in other people's private affairs she is likely to be the next victim.";
+          break;
+        case endBtnSully:
+          wrongGuessScreen.innerHTML = "Sorry, you guessed incorrectly. Sully did not steal your files. But, with all his video surveillance tapes he probably has evidence that implicates the real suspect--the person who would be most effected by your expose.";
+          break;
+          default:
+        }
    	guessScreen.setAttribute("class", "invisible");
     wrongGuessScreen.setAttribute("class", "visible");
     playAgainBtn.setAttribute("class", "visible");
@@ -238,15 +257,12 @@ window.onload = function(){
      endScreen.setAttribute("class", "invisible");
      intHeader.setAttribute("class","invisible");
      hideVisiblePage();
-     document.getElementById("pbar_outerdiv").setAttribute("class","visible");
      reSetTimer();
      homePage.setAttribute("class", "visible-page");
      homePage.setAttribute("style", "");
      guessAgainBtn.setAttribute("class", "visible");
-     //introVideo.setAttribute("class", "visible");
-
      var theInstructions = document.getElementById("instructions");
-     theInstructions.setAttribute("class", "visible");
+     //theInstructions.setAttribute("class", "visible");
 
   }
 

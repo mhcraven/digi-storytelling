@@ -155,7 +155,7 @@ map title {
 .end-buttons {
 	background-color: lightblue;
 	display: inline-block;
-	padding: 11px 10px 15px;
+	padding: 10px 10px 10px;
 	margin-right: 10px;
 	color: #222;
 	font-size: 20px;
@@ -201,8 +201,8 @@ map title {
 
 #home-logo {
 	position: absolute;
-	top: 0;
-	left: 0;
+	top: 12px;
+	left: 20px;
 	z-index: 1001;
 }
 
@@ -265,8 +265,8 @@ map title {
 
 	.bio {
 		position: absolute;
-		top: 300px;
-		left: 450px;
+		top: 250px;
+		left: 460px;
 	}
 
 	.video-clue {
@@ -278,7 +278,7 @@ map title {
 	.audio-clue {
 		position: absolute;
 		top: 600px;
-		right: 30px;
+		left: 30px;
 	}
 		.audio-caption {
 			padding-bottom: 10px;

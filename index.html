@@ -11,8 +11,6 @@
 	<link href='http://fonts.googleapis.com/css?family=Average+Sans' rel='stylesheet' type='text/css'/>
 	<link href="css/lightbox.css" rel="stylesheet" />
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-	
-	
 
 </head>
 
@@ -28,20 +26,20 @@
 				<div id="guess-screen" class="visible">
 					<h3>Game Over</h3>
 					<h4>Who Hacked You?</h4>
-					<input id="adrian-button" class="end-buttons" type="button" value="Adrian?">
-					<input id="hermes-button" class="end-buttons" type="button" value="Hermes?">
-					<input id="max-button" class="end-buttons" type="button" value="Max?">
-					<input id="shortz-button" class="end-buttons" type="button" value="Shortz86?">
-					<input id="sully-button" class="end-buttons" type="button" value="Sully?">
+					<input id="adrian-button" class="end-buttons" type="button" value="Adrian">
+					<input id="hermes-button" class="end-buttons" type="button" value="Hermes">
+					<input id="max-button" class="end-buttons" type="button" value="Max">
+					<input id="shortz-button" class="end-buttons" type="button" value="Shortz86">
+					<input id="sully-button" class="end-buttons" type="button" value="Sully">
 				</div>
 				<div id="correct-guess" class="invisible">
 					<img src="images/photo-max.jpg">
-					<p>Congratulations, you guessed correctly and have saved your files. It was Max who stole your files. Max, who killed Adrian, clearly had the most to lose. </p>
+					<p>Congratulations, you guessed correctly and have saved your files. It was Max who stole your files because he would have the most to lose when you shared the evidence against him. As you may have guessed, Max killed Adrian because Adrian, his then accomplise in a major hack, got cold feet and decided to turn Max in. If implicated in the murder of Adrian, he will be held accountable with life in prison. Your investigatory work will now put all these hackers behind bars.</p>
 				</div>
 				<div id="wrong-guess" class="invisible">
-					<p>Sorry, you guessed incorrectly. Your files have been lost forever and the hackers get away with their crimes once again.</p>
+					
 				</div>
-				<input id="play-again-btn" class="invisible" type="button" value="PLAY AGAIN">
+				<input id="play-again-btn" class="invisible" type="button" value="Play Again">
 		</div>
 
 		<div id="pbar_outerdiv" class="invisible" >
@@ -49,11 +47,11 @@
 					<div id="pbar_innertext">Preparing to Download...</div>
 		</div>
 
-		<input id="guess-again-btn" class="invisible" type="button" value="Guess Again">
+		<input id="guess-again-btn" class="invisible" type="button" value="Guess Now">
 
 		<section id="home-page" class="visible-page">
 
-			<video width="800" height="" id="intro-video" class="" controls>
+			<video id="intro-video" width="800" height=""  class="" controls>
 	  			<source src="video/intro.mp4" type="video/mp4">
 	  			<source src="video/intro.ogv" type="video/ogv">
 	  			<source src="video/intro.ogg" type="video/ogg">
@@ -128,24 +126,20 @@
 				<img class="files" class="ui-widget-content" src="images/adrian/files-adrian.jpg"  alt="" usemap="#afiles" >
 
 					<map name="afiles">
-						<area shape="rect" coords="44,58,172,148" rel="lightbox" href="images/adrian/email-adrian.jpg" title="Email" alt="Email to Hermes" />
+						<area shape="rect" coords="75,63,151,159" rel="lightbox" href="images/adrian/obit-adrian.jpg" title="" alt="Adrian's Obituary" />
 
-						<area shape="rect" coords="283,65,350,150" rel="lightbox" href="images/adrian/obit-adrian.jpg" title="Email" alt="Email from Hermes"/>
+						<area shape="rect" coords="275,75,354,156" rel="lightbox" href="images/adrian/calendar-adrian.png" title="" alt="Adrian's Calendar"/>
 
-						<area shape="rect" coords="58,166,157,246" rel="lightbox" href="images/adrian/calendar.jpg" title="Email" alt="IM from Shortz to Hermes" />
+						<area shape="rect" coords="275,186,355,270" rel="lightbox" href="images/adrian/calendar-max.png" title="" alt="Max's Calendar" />
 					</map>
 
-				<img class="bio" src="images/adrian/bio-adrian.png" alt="bio" usemap="#clue1"/>
+				<img class="bio"src="images/adrian/bio-adrian.jpg" alt="bio" usemap="#clue1"/>
 					
 					<map name="clue1">
-						<area shape="rect" coords="194,375,472,402" href="hermes.html" title="Bio" alt="Herme's Bio" />
+						<area shape="rect" coords="194,375,472,402" href="hermes.html" title="Bio" alt="Hermes' Bio" />
 
-				<video width="320" class="video-clue" height="240" controls="">
-		  			
-		  			<source src="video/adrian/video-adrian.mp4" type="video/mp4">
-		  			
-					Your browser does not support the video tag.
-				</video> 
+				<iframe class="video-clue" width="853" height="480" src="http://www.youtube.com/embed/tpuqDDb9EEo?rel=0" frameborder="0" allowfullscreen></iframe>
+
 			</section>
 
 			<section id="hermes-page" class="invisible-page">
@@ -153,23 +147,16 @@
 	
 					<map name="hfiles">
 						
-						<area shape="rect" coords="30,76,154,149" rel="lightbox" href="images/hermes/facebook-hermes.jpg" title="Facebook" alt="Email from Hermes" />
+						<area shape="rect" coords="30,76,154,149" rel="lightbox" href="images/hermes/facebook-hermes.jpg" alt="Facebook chat between Hermes and Adrian" />
 
-						<area shape="rect" coords="184,72,339,139" rel="lightbox" href="images/hermes/bizcard-hermes.jpg" title="Card" alt="Bloody business card" />
+						<area shape="rect" coords="184,72,339,139" rel="lightbox" href="images/hermes/bizcard-hermes.jpg" alt="Bloody business card" />
 
-						<area shape="rect" coords="22,185,172,239" rel="lightbox" href="images/hermes/fingerprints-hermes.jpg" title="Map" alt="Map of Adrian's Apartment" />
-
-						<area shape="rect" coords="206,173,317,234" rel="lightbox" href="images/hermes/blowkss-hermes.gif" title="Gif" alt="Hermes luring her online prey" />
+						<area shape="rect" coords="206,173,317,234" rel="lightbox" href="images/hermes/blowkss-hermes.gif" alt="Hermes luring her online prey" />
 					</map>
 
-				<img class="bio" src="images/hermes/bio-hermes.png" alt="bio" usemap="#hclue1" >
+				<img class="bio" src="images/hermes/bio-hermes.jpg" alt="bio" usemap="#hclue1" >
 
-				<video width="320" class="video-clue" height="240" controls="">
-		  			
-		  			<source src="video/hermes/videoskype-hermes.mp4" type="video/mp4">
-		  			
-					Your browser does not support the video tag.
-				</video> 
+				<iframe class="video-clue" width="640" height="480" src="http://www.youtube.com/embed/RQfLzdzaIkY?rel=0" frameborder="0" allowfullscreen></iframe>
 			
 				
 			</section>
@@ -178,41 +165,32 @@
 				<img class="files" class="ui-widget-content" src="images/max/files-max.jpg" alt="" usemap="#xfiles" >
 	
 					<map name="xfiles">
-						<area shape="rect" coords="66,74,155,143" rel="lightbox" href="images/max/idcards-max.png" title="IDs" alt="Max's ID cards" />
+						<area shape="rect" coords="27,72,97,156" rel="lightbox" href="images/max/idcards-max.png" alt="Email to Adrian" />
 						
-						<area shape="rect" coords="269,68,58,147" rel="lightbox" href="images/max/id-x.png" title="ID" alt="Another ID Card of Max's" />
-
-						<area shape="rect" coords="280,180,341,260" rel="lightbox" href="images/max/calendar-x.png" title="Calendar" alt="Max's calendar" />
-
+						<area shape="rect" coords="200,73,280,155" rel="lightbox" href="images/max/fingerprints-max.jpg" alt="Fingerprint Research" />
 					</map>
 
-				<img class="bio" src="images/max/bio-max.png" alt="bio" usemap="#mclue1">
-				
-				<iframe class="video-clue" width="853" height="480" src="http://www.youtube.com/embed/tpuqDDb9EEo?rel=0" frameborder="0" allowfullscreen></iframe>
+				<img class="bio" src="images/max/bio-max.jpg" alt="bio" usemap="#mclue1">
 
-				
-					
+				<iframe class="video-clue" width="853" height="480" src="http://www.youtube.com/embed/GR4dF7mF334?rel=0" frameborder="0" allowfullscreen></iframe>
+		
 			</section>
 
 			<section id="shortz-page" class="invisible-page">
 				<img class="files" class="ui-widget-content" src="images/shortz/files-shortz.jpg" alt="" usemap="#shfiles" >
 
 					<map name="shfiles">
-						<area shape="rect" coords="43,70,140,128" rel="lightbox" href="images/shortz/email-shortz.jpg" title="Email" alt="Email to Hermes" />
+						<area shape="rect" coords="43,70,140,128" rel="lightbox" href="images/shortz/email-shortz.jpg" alt="Email to Hermes" />
 						
-						<area shape="rect" coords="210,50,336,128" rel="lightbox" href="images/shortz/im-shortz.jpg" title="Email" alt="IM from Shortz to Hermes" />
+						<area shape="rect" coords="210,50,336,128" rel="lightbox" href="images/shortz/im-shortz.jpg" alt="IM from Shortz to Hermes" />
 
-						<area shape="rect" coords="212,158,326,211" rel="lightbox" href="images/shortz/email-shortz2.jpg" title="Email" alt="Email from Hermes" />
+						<area shape="rect" coords="212,158,326,211" rel="lightbox" href="images/shortz/email-shortz2.jpg" alt="Email from Hermes" />
 					</map>
 
-				<img class="bio" src="images/shortz/bio-shortz.png" alt="bio" usemap="#shclue1" />
+				<img class="bio" src="images/shortz/bio-shortz.jpg" alt="bio" usemap="#shclue1" />
 			
-				<video width="320" class="video-clue" height="240" controls="">
-		  			
-		  			<source src="video/shortz/vid-shortz.mp4" type="video/mp4">
-		  			
-					Your browser does not support the video tag.
-				</video> 
+				<iframe class="video-clue" width="853" height="480" src="http://www.youtube.com/embed/RTmjHD8P50Q?rel=0" frameborder="0" allowfullscreen></iframe>
+
 				<div class="audio-clue">
 					<div class="audio-caption">Phone call between Shortz and Sully</h5></div>
 					<audio controls preload="auto" autobuffer>
@@ -231,34 +209,31 @@
 
 					<map name="sufiles">
 						
-						<area shape="rect" coords="44,70,153,129" rel="lightbox" href="images/sully/email-sully2.png" title="Email" alt="Email from Adrian" />
+						<area shape="rect" coords="44,70,153,129" rel="lightbox" href="images/sully/email-sully2.png" alt="Email from Adrian" />
 
-						<area shape="rect" coords="229,72,307,134" rel="lightbox" href="images/sully/email-sully.png" title="Email" alt="Email to Max" />
-					
-						
-						<area shape="rect" coords="58,156,121,217" rel="lightbox" href="images/sully/keycards-sully.png" title="Key Cards" alt="IM from Shortz to Hermes" />
+						<area shape="rect" coords="229,72,307,134" rel="lightbox" href="images/sully/email-sully.png" alt="Email to Max" />
 
-						<area shape="rect" coords="225,157,313,216" rel="lightbox" href="images/sully/workorder-sully.jpg" title="Work Order" alt="Fake Work Order" />
+						<area shape="rect" coords="225,157,313,216" rel="lightbox" href="images/sully/workorder-sully.jpg" alt="Fake Work Order" />
 					</map>
 
-				<img class="bio" src="images/sully/bio-sully.png" alt="bio" usemap="#shclue1" />
+				<img class="bio" src="images/sully/bio-sully.jpg" alt="bio" usemap="#shclue1" />
 
-				<iframe class="video-clue" width="640" height="360" src="http://www.youtube.com/embed/O1Ix8TeM71k?rel=0;modestbranding=1" frameborder="0" allowfullscreen></iframe>
+				<iframe class="video-clue" width="853" height="480" src="http://www.youtube.com/embed/O1Ix8TeM71k?rel=0" frameborder="0" allowfullscreen></iframe>
 
 		</section>
 	</div>
 
 		<div id="background">
 			1100102003001023040120100102010100111#$%#001010101010#$%&030055ERT10<br>110020010-THE-USUAL-HACSPECTS-230910010010100010011000000000000000000102030000000000011111111111110010200300wWERT#r100102010100111001010101010101$%^***005509384029380101100200102938578931131230910010010100010<br>01100000000000000000wert#-WHO-DID-IT?-02003001023040120100102010100111001010101010101010202020102030055093840293801011002001029385789311312309100100101000100<br>1100000000000000000#^&1111100102003001023040120100102010100111001010101010101010202020102030055093840293801011002#$%#$%00102938578931131230<br>9100100101000100110000000000000000001020300000000000111111111111100102003001$%^!!0230401201<br>
-			11001010101010101010202020102030055093840293801011002001029385789311312309100100101000100110000000000000000001020300000000000111111111111100102003001023@#$%(^01010101010101020202010203005509384029380101100200102938578931131230910010<br>0101000100110000000000000000001020300000000000111111111111100102003001023040120100102010100111001010101010000011<br>1111111111100102003001023040<br>1201001020134#$%&0100111001010101010101010202020102030055093840293801011002001029385789311312309100100101000100<br>110000000000000000001020303#$%#$$&*00000<br>000001111111111111001020030010230401201001020@#$%^&&***010102020201020300550938402938010110020010293857893113123<br>0910010010100010011000000000000000000102030000000000011111111<br>11111001<br>1100101010101010101020202010203005509384029380101100200102938578931131230910010010100010011000000000000000000102030000000000011111111111110010200300102304012010010201010011100101010101010101020202010203005509384029380101100200102938578931131230910010<br>0101000100110000000000000001111111111111001020030010230401201001020101001110010101010100000111111111111100102003001023040120100102010100111001010101100000000000000<br>000111111111111100102003001023040120100102010100111001010101010101010202020102030055093840293801011002001<br>0293857893113123091001001010001001100000000000000000010203000000000001111111111111001020030010230401201001020101001550938402938010110020010293857893113123091001001010001001100<br>1100101010101010101000111111111111100102003001023040120100102010100111001010101010101010202020102030055093840293801<br>0110020010293857893113123091001001010001001100000000000000000010203000000000001111111111111001020030010230401201001020101001110010101010101010<br>1020202010203005509384029380101<br>100200102938578931131230910010010100010011000000000000<br>00000010203000000000001111111111110011100101010101010101020202010203005509384029380101100200102938578931131230910010010100010011000000000000<br>000000102030000<br>00000001111111111111001020030010230401201001020101001110010101010100000111111111111<br>1001020030010230401201001020101<br>0011100101010101010<br>000111111111111100102003001023040120100102010100111001010101010101010202020102030055093840293801011002001029385789311312309<br>100100101000101<br>0101010101020202010203<br>093840293801011002001029385789311312#$%@#$%^&dfg01100000000000000000010203000000000001111111111111001020030010230401201001020101001<br>11001010101010101010202@#$@@030055093840293801011002001029385789311312309100100101<br>00010011000000000000<br>000000102030000<br>000000011111111111110010<br>3001023040120100102010100111001010101010101010202020102030055093840293801<br>011002001029385789311312309100100101000100110000000000000000001020300000000000111111111111100102003001<br>023040120100102010100111001010101010101011001010sdfg10202020102030055093840293801011002001<br>029385789311312309100100101000100110000000000000000000000000001020300000000000111111111111100102003001023040120100100<br>00011111111111110010200300102304012010010201010011100101010101010<br>10102020201020300550938rrteeet@#$%^^<br>aASD@#%^^^02010203<br>0938402938010110020010293857893113123091001001010001001100000000000000000010203000000000001111111111111001020030010230401201001020101001<br>1100101010101010101020202010203005509384029380101100200102938578931131230910010010100010011000000000000<br>000000102030000<br>000000011111111111110010<br>3001023040120100102010100111001010101010101010202020102030055093840293801<br>011002001029385789311312309100100101000100110000000000000000001020300000000000111111111111100102003001<br>023040120100102010100111001010101010101011001010101010101010202020102030055093840293801011002001<br>0293857893113123091001001010001001100000000000000000000000000010203000000000001111111111111001020030010230401201
+			11001010101010101010202020102030055093840293801011002001029385789311312309100100101000100110000000000000000001020300000000000111111111111100102003001023@#$%(^01010101010101020202010203005509384029380101100200102938578931131230910010<br>0101000100110000000000000000001020300000000000111111111111100102003001023040120100102010100111001010101010000011<br>1111111111100102003001023040<br>1201001020134#$%&0100111001010101010101010202020102030055093840293801011002001029385789311312309100100101000100<br>110000000000000000001020303#$%#$$&*00000<br>000001111111111111001020030010230401201001020@#$%^&&***010102020201020300550938402938010110020010293857893113123<br>091001001010001Max0011000000000000000000102030000000000011111111<br>11111001<br>11001010101010101010202020102030055093840293801011002001029385Hermes7893113123091001001010001001100000000000000000Adrian010203000000000001111111111111001020030010230401201001020101001110010101Shortz0101010101020202010203005509384029380101100200102938Shortz86578931131230910010<br>010100010011000000000000000111111111111100Adrian102003001023040120100102010100111001010101010000011Max1111111Hermes111100102003001023040120100102010100111001010101100000000000000<br>00011111111111110010200300102304012010010201Adrian0100111001010101010101010202020102030055093840293801011002001<br>0293857893113123091001001010001001100000000000000000010203000000000001111111111111001020030010230401201001020101001550938402938010110020010293857893113123091001001010001001100<br>1100101010101010101000111111111111100102003001023040120100102010100111001010101010101010202020102030055093840293801<br>01100200102938578931131230Shortz91001001010001001100000000000000000010203000000000001111111111111001020030010230401201001020101001110010101010101010<br>1020202010203005509384029380101<br>100200102938578931131230910010010100010011000000000000<br>00000010203000000000001111111111110011100101010101010101020202010203005509384029380101100200102938578931131230910010010100010011000000000000<br>000000102030000<br>00000001111111111111001020030010230401201001020101001110010101010100000111111111111<br>1001020030010230401201001020101<br>0011100101010101010<br>000111111111111100102003001Margaret023040120100102010100111001010101010101010202020102030055093840293801011002001029385789311312309<br>100100101000101<br>0101010101020202010203<br>093840293801011002001029385789311312#$%@#$%^&Sullydfg01100000000000000000010203000000000001111111111111001020030010230401201001020101001<br>11001010101010101010202@#$@@030055093840293801011002001029385789311312309100100101<br>00010011000000000000<br>00000Sully0102030000<br>000000011111111111110010<br>3001023040Max120100102010100111001010101010101010202020102030055093840293801<br>011002001029385789311312309100100101000100110000000000000000001020300000000000111111111111100102003001<br>0230401201001Max02010100111001010101010101011001010sdfg10202020102030055093840293801011002001<br>0293857893113123Hermes09100100101000100110000000000000000000000000001020300000000000111111111111100102003001023040120100100<br>00011111111111110010200300102304012010010201010011100101010101010<br>10102020201020300550938rrteeet@#$%^^<br>aASD@#%^^^02010203<br>0938402938010110020010293857893113123091001001010001001100000000000000000010203000000000001111111111111001020030010230401201001020101001<br>1100101010101010101020202010203005509384029380101100200102938578931131230910010010100010011000000000000<br>000000102030000<br>000000011111111111110010<br>30010230401201001020101001110Max001020300000000000111111111111100102003001<br>023040120100102010100111001010101010101011001010101010101010202020102030055093840293801011002001<br>0293857893113123091001001010001001100000000000000000000000000010203000000000001111111111111001020030010230401201
 			</div>	 
 
 <!-- javascript -->
  
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+  	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
 	<script src="js/lightbox.js"></script>
 	<script src="js/script.js"></script>
-	<script src="js/modernizr.js"></script>		
+	<script src="js/modernizr.js"></script>
 
 	</div>
 </body>
