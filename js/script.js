@@ -63,7 +63,17 @@ window.onload = function(){
 				clearTimeout(timer);
 				displayEndScreen();
 			   }
+         if (perc === 25 ){
+        displayChooseNowBtn();
+         }
 		}
+
+    var guessNowBtn = document.getElementById("guess-now-btn");
+    guessNowBtn.addEventListener("click", displayEndScreen, false);
+
+    function displayChooseNowBtn(){
+      guessNowBtn.setAttribute("class", "visible");
+    }
 
     function reSetTimer(){
         document.getElementById("pbar_outerdiv").setAttribute("class","visible");
@@ -218,9 +228,6 @@ window.onload = function(){
 
     var correctGuessScreen = document.getElementById("correct-guess");
     var wrongGuessScreen = document.getElementById("wrong-guess");
-    
-    var guessAgainBtn = document.getElementById("guess-again-btn");
-    guessAgainBtn.addEventListener("click", displayEndScreen, false);
 
 
   function wrongGuess( e ) {
@@ -236,7 +243,7 @@ window.onload = function(){
           wrongGuessScreen.innerHTML = "Sorry, you guessed incorrectly. Shortz86 did not steal your files. However, by meddling in other people's private affairs she is likely to be the next victim.";
           break;
         case endBtnSully:
-          wrongGuessScreen.innerHTML = "Sorry, you guessed incorrectly. Sully did not steal your files. But, with all his video surveillance tapes he probably has evidence that implicates the real suspect--the person who would be most effected by your expose.";
+          wrongGuessScreen.innerHTML = "Sorry, you guessed incorrectly. Sully did not steal your files. But, with all his video surveillance tapes he probably has evidence that implicates the real suspect--the person who would be most affected by your expose.";
           break;
           default:
         }
@@ -260,7 +267,6 @@ window.onload = function(){
      reSetTimer();
      homePage.setAttribute("class", "visible-page");
      homePage.setAttribute("style", "");
-     guessAgainBtn.setAttribute("class", "visible");
      var theInstructions = document.getElementById("instructions");
      //theInstructions.setAttribute("class", "visible");
 
